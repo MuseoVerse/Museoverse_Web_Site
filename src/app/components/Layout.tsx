@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
 import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
+import museoVerseLogo from "../../assets/ca37ab0589456b573561e21d7ada50143220bbeb.png";
 
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
@@ -44,12 +45,11 @@ function Navbar() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-full bg-[#341701] flex items-center justify-center group-hover:-translate-y-0.5 transition-transform">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" stroke="#ffe088" strokeWidth="2" strokeLinejoin="round"/>
-              <path d="M12 22V12M2 7l10 5 10-5" stroke="#ffe088" strokeWidth="2" strokeLinejoin="round"/>
-            </svg>
-          </div>
+          <img
+            src={museoVerseLogo}
+            alt="MuseoVerse logo"
+            className="w-9 h-9 object-contain group-hover:-translate-y-0.5 transition-transform"
+          />
           <span className="font-['Playfair_Display'] text-[#341701] text-[22px] tracking-[-0.5px]">
             MuseoVerse
           </span>

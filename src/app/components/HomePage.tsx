@@ -16,6 +16,9 @@ import {
   StaggerItem,
 } from "./animations";
 import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
+import ecosystemPreviewImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
+import heroLeftFrameImage from "../../assets/pexels-photo-3957980.webp";
+import heroCenterFrameImage from "../../assets/64d0d95f9e8f747f189f5da697e0557efb1ff413.png";
 
 const FEATURES = [
   { icon: ScanSearch, title: "AI Artifact Recognition", desc: "Point your camera at any artifact and instantly unlock its story, origin, and cultural significance." },
@@ -187,13 +190,13 @@ export function HomePage() {
             <BlockReveal className="flex-1 flex justify-center items-end gap-[-20px] relative" delay={0.12} y={24}>
               <FloatingElement className="hidden md:block -mr-6 mb-8 opacity-70" delay={0.1} distance={10} duration={6.5}>
                 <PhoneMockup
-                  src="https://images.unsplash.com/photo-1769437598069-d5148d009769?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzbWFydHBob25lJTIwbXVzZXVtJTIwdmlzaXRvcnxlbnwxfHx8fDE3NzQ4MDY5ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={heroLeftFrameImage}
                   alt="MuseoVerse Scan Feature"
                 />
               </FloatingElement>
               <FloatingElement className="z-10" distance={14} duration={5.8}>
                 <PhoneMockup
-                  src="https://images.unsplash.com/photo-1765127959662-a7229fa51580?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNldW0lMjBnYWxsZXJ5JTIwYW5jaWVudCUyMGFydGlmYWN0c3xlbnwxfHx8fDE3NzQ4MDY5ODF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={heroCenterFrameImage}
                   alt="MuseoVerse App"
                 />
               </FloatingElement>
@@ -243,11 +246,11 @@ export function HomePage() {
           </BlockReveal>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {STEPS.map((s) => (
-              <StaggerItem key={s.num}>
-                <div className="relative bg-[#fbf9f4]/5 rounded-2xl p-7 border border-[#ffe088]/10 hover:border-[#ffe088]/25 hover:-translate-y-1 transition-all duration-300">
-                  <span className="font-['Playfair_Display'] text-[48px] text-[#ffe088]/10 absolute top-4 right-6">{s.num}</span>
-                  <div className="relative z-10">
-                    <h3 className="font-['Manrope'] text-[16px] text-[#ffe088] mb-3 mt-8">{s.title}</h3>
+              <StaggerItem key={s.num} className="h-full">
+                <div className="relative h-full bg-[#fbf9f4]/5 rounded-2xl p-7 border border-[#ffe088]/10 hover:border-[#ffe088]/25 hover:-translate-y-1 transition-all duration-300">
+                  <span className="font-['Playfair_Display'] text-[48px] leading-none text-[#ffe088]/10 absolute top-0 right-6">{s.num}</span>
+                  <div className="relative z-10 flex h-full flex-col">
+                    <h3 className="font-['Manrope'] text-[16px] text-[#ffe088] mb-3 mt-6">{s.title}</h3>
                     <p className="font-['Manrope'] text-[13px] text-[#fbf9f4]/50 leading-[22px]">{s.desc}</p>
                   </div>
                 </div>
@@ -323,7 +326,7 @@ export function HomePage() {
       </SectionReveal>
 
       {/* ECOSYSTEM PREVIEW */}
-      <SectionReveal className="py-20 md:py-28 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+      <SectionReveal className="pt-20 md:pt-28 pb-10 md:pb-14 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
             <BlockReveal>
@@ -352,7 +355,7 @@ export function HomePage() {
             <BlockReveal className="relative" delay={0.12}>
               <div className="rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(52,23,1,0.12)] border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBjb21wdXRlciUyMHNjcmVlbnxlbnwxfHx8fDE3NzQ4MDY5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={ecosystemPreviewImage}
                   alt="MuseoVerse Dashboard"
                   className="w-full h-[320px] md:h-[400px] object-cover"
                 />
@@ -376,7 +379,7 @@ export function HomePage() {
       </SectionReveal>
 
       {/* TRUST */}
-      <SectionReveal className="py-20 md:py-28 bg-gradient-to-b from-[#fbf9f4] to-[#f5f0e4]/65 overflow-hidden">
+      <SectionReveal className="pt-10 md:pt-14 pb-12 md:pb-16 bg-gradient-to-b from-[#fbf9f4] to-[#f5f0e4]/65 overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="relative rounded-[36px] border border-[#c9a84c]/15 bg-white/70 px-6 py-10 md:px-10 md:py-14 shadow-[0_20px_60px_rgba(52,23,1,0.06)] backdrop-blur-sm overflow-hidden">
             <div className="absolute -top-20 right-0 h-[240px] w-[240px] rounded-full bg-[#ffe088]/12 blur-[90px]" />
@@ -427,7 +430,7 @@ export function HomePage() {
       </SectionReveal>
 
       {/* FAQ */}
-      <SectionReveal className="py-20 md:py-28 bg-[#f5f0e4]/50">
+      <SectionReveal className="pt-12 md:pt-16 pb-20 md:pb-28 bg-[#f5f0e4]/50">
         <div className="max-w-[720px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-12">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">FAQ</span>
