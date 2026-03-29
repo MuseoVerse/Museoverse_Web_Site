@@ -7,7 +7,7 @@ export function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <SectionReveal className="pt-[72px] pb-16 md:pb-24 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+      <SectionReveal className="pt-[72px] pb-12 md:pb-16 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24">
           <div className="max-w-[680px] mx-auto text-center">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">About MuseoVerse</span>
@@ -23,7 +23,7 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* The Problem */}
-      <SectionReveal className="py-20 md:py-28">
+      <SectionReveal className="py-16 md:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] hover:-translate-y-1 transition-transform duration-300">
@@ -49,7 +49,7 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Mission & Vision */}
-      <SectionReveal className="py-20 md:py-28 bg-[#341701]">
+      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <StaggerItem>
@@ -75,7 +75,7 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Values */}
-      <SectionReveal className="py-20 md:py-28">
+      <SectionReveal className="py-16 md:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
           <BlockReveal>
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Our Values</span>
@@ -103,7 +103,7 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Team */}
-      <SectionReveal className="py-20 md:py-28 bg-[#f5f0e4]/50">
+      <SectionReveal className="py-16 md:py-20 bg-[#f5f0e4]/50">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal>
@@ -130,7 +130,7 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="py-20 bg-[#341701]">
+      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
         <div className="max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Join the Journey</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Whether as a museum partner, a curious visitor, or a like-minded collaborator — we'd love to hear from you.</p>

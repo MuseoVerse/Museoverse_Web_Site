@@ -20,6 +20,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const useSolidHeader = scrolled || location.pathname === "/for-museums";
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -38,7 +39,7 @@ function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        useSolidHeader
           ? "bg-[#fbf9f4]/95 backdrop-blur-md shadow-[0_2px_24px_rgba(52,23,1,0.06)]"
           : "bg-transparent"
       }`}
@@ -211,9 +212,9 @@ function Footer() {
               <a href="#" className="flex items-center gap-3 bg-[#fbf9f4]/5 hover:bg-[#fbf9f4]/10 hover:-translate-y-0.5 rounded-xl px-4 py-3 transition-all group">
                 <AppStoreBadgeContent
                   iconFill="#ffe088"
-                  iconHeight={24}
+                  iconHeight={28}
                   iconOpacity={1}
-                  iconWidth={20}
+                  iconWidth={28}
                   subtitleClassName="text-[#fbf9f4]/40"
                   textClassName="text-[13px] text-[#fbf9f4]/80"
                 />
@@ -221,8 +222,8 @@ function Footer() {
               <a href="#" className="flex items-center gap-3 bg-[#fbf9f4]/5 hover:bg-[#fbf9f4]/10 hover:-translate-y-0.5 rounded-xl px-4 py-3 transition-all group">
                 <GooglePlayBadgeContent
                   iconClassName="opacity-80"
-                  iconHeight={22}
-                  iconWidth={20}
+                  iconHeight={26}
+                  iconWidth={28}
                   subtitleClassName="text-[#fbf9f4]/40"
                   textClassName="text-[13px] text-[#fbf9f4]/80"
                 />

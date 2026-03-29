@@ -169,8 +169,8 @@ export function HomePage() {
                 <a href="#" className="flex items-center gap-2 bg-[#341701] rounded-lg px-3 py-2 hover:bg-[#4a2508] hover:-translate-y-0.5 transition-all">
                   <AppStoreBadgeContent
                     iconFill="#ffe088"
-                    iconHeight={16}
-                    iconWidth={14}
+                    iconHeight={18}
+                    iconWidth={18}
                     subtitleClassName="hidden"
                     textClassName="text-[11px] text-[#ffe088]"
                   />
@@ -178,7 +178,7 @@ export function HomePage() {
                 <a href="#" className="flex items-center gap-2 bg-[#341701] rounded-lg px-3 py-2 hover:bg-[#4a2508] hover:-translate-y-0.5 transition-all">
                   <GooglePlayBadgeContent
                     iconHeight={16}
-                    iconWidth={14}
+                    iconWidth={18}
                     subtitleClassName="hidden"
                     textClassName="text-[11px] text-[#ffe088]"
                   />

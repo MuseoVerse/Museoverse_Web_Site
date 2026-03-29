@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
+import museumIntelligenceCenterImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
 
 const BENEFITS = [
   { icon: BarChart3, title: "Real-Time Analytics", desc: "Monitor visitor engagement, scan activity, and storytelling usage with a live dashboard designed for cultural institutions." },
@@ -27,7 +28,7 @@ export function ForMuseumsPage() {
             alt="" className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-20 md:pt-28 pb-20 md:pb-28">
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-20 md:pt-28 pb-14 md:pb-20">
           <div className="max-w-[600px]">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#ffe088]/60">For Museums & Institutions</span>
             <h1 className="font-['Playfair_Display'] text-[34px] md:text-[50px] text-[#fbf9f4] mt-3 mb-5 leading-[1.1]">
@@ -50,7 +51,7 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Why Museums Choose */}
-      <SectionReveal className="py-20 md:py-28">
+      <SectionReveal className="py-16 md:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Why MuseoVerse</span>
@@ -76,7 +77,7 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Dashboard Preview */}
-      <SectionReveal className="py-20 md:py-28 bg-[#f5f0e4]/50">
+      <SectionReveal className="py-16 md:py-20 bg-[#f5f0e4]/50">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal>
@@ -105,7 +106,7 @@ export function ForMuseumsPage() {
             </BlockReveal>
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(52,23,1,0.12)] border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300" delay={0.08}>
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBjb21wdXRlciUyMHNjcmVlbnxlbnwxfHx8fDE3NzQ4MDY5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={museumIntelligenceCenterImage}
                 alt="MuseoVerse Dashboard"
                 className="w-full h-[300px] md:h-[420px] object-cover"
               />
@@ -115,7 +116,7 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Partner Process */}
-      <SectionReveal className="py-20 md:py-28">
+      <SectionReveal className="py-16 md:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Getting Started</span>
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[36px] text-[#341701] mt-3 mb-14">How Partnership Works</h2>
@@ -125,8 +126,8 @@ export function ForMuseumsPage() {
               { step: "02", title: "Onboard & Integrate", desc: "Our team works with you to set up your museum's profile, catalog artifacts, and configure analytics.", icon: Shield },
               { step: "03", title: "Launch & Grow", desc: "Go live with visitor-facing features and start tracking engagement from day one. Ongoing support included.", icon: TrendingUp },
             ].map((s) => (
-              <StaggerItem key={s.step}>
-                <div className="bg-[#f5f0e4] rounded-2xl p-8 border border-[#c9a84c]/10 text-center hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(52,23,1,0.08)] transition-all duration-300">
+              <StaggerItem key={s.step} className="h-full">
+                <div className="h-full bg-[#f5f0e4] rounded-2xl p-8 border border-[#c9a84c]/10 text-center hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(52,23,1,0.08)] transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-[#341701] flex items-center justify-center mx-auto mb-5">
                     <s.icon size={20} className="text-[#ffe088]" />
                   </div>
@@ -141,7 +142,7 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="py-20 bg-[#341701]">
+      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
         <div className="max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Ready to Join the MuseoVerse Network?</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Discover how MuseoVerse can help your institution engage visitors, measure impact, and grow cultural reach.</p>

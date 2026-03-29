@@ -37,14 +37,20 @@ export function AppleIcon({
 }
 
 type GooglePlayIconProps = {
+  accentFill?: string;
   className?: string;
   height?: number;
+  primaryFill?: string;
+  secondaryFill?: string;
   width?: number;
 };
 
 export function GooglePlayIcon({
+  accentFill = "#f3c645",
   className,
   height = 20,
+  primaryFill = "#ffe088",
+  secondaryFill = "#d3ae44",
   width = 18,
 }: GooglePlayIconProps) {
   return (
@@ -59,22 +65,22 @@ export function GooglePlayIcon({
     >
       <path
         d="m281.963 245.846-247.68 247.68c-11.84-11.2-18.24-26.56-18.24-43.2V61.846c0-16.96 6.72-32.32 18.88-43.84l247.04 227.84z"
-        fill="#ffe088"
+        fill={primaryFill}
         opacity="1"
       />
       <path
         d="M496.043 256.086c0 22.4-12.16 42.24-32.32 53.44l-70.4 39.04-87.36-80.64-24-22.08 92.48-92.48 89.28 49.28c20.16 11.2 32.32 31.04 32.32 53.44z"
-        fill="#f3c645"
+        fill={accentFill}
         opacity="1"
       />
       <path
         d="M281.963 245.846 34.923 18.006c3.2-3.2 7.36-6.08 11.52-8.64 20.16-12.16 44.48-12.48 65.28-.96l262.72 144.96-92.48 92.48z"
-        fill="#d3ae44"
+        fill={secondaryFill}
         opacity="1"
       />
       <path
         d="m393.323 348.566-281.6 155.2c-9.92 5.76-21.12 8.32-32 8.32-11.52 0-23.04-2.88-33.28-9.28a58.212 58.212 0 0 1-12.16-9.28l247.68-247.68 24 22.08 87.36 80.64z"
-        fill="#d3ae44"
+        fill={secondaryFill}
         opacity="1"
       />
     </svg>
@@ -82,10 +88,12 @@ export function GooglePlayIcon({
 }
 
 type StoreBadgeContentProps = {
+  iconAccentFill?: string;
   iconClassName?: string;
   iconFill?: string;
   iconHeight?: number;
   iconOpacity?: number;
+  iconSecondaryFill?: string;
   iconWidth?: number;
   subtitleClassName?: string;
   textClassName?: string;
@@ -124,8 +132,11 @@ export function AppStoreBadgeContent({
 }
 
 export function GooglePlayBadgeContent({
+  iconAccentFill,
   iconClassName,
+  iconFill,
   iconHeight = 20,
+  iconSecondaryFill,
   iconWidth = 18,
   subtitleClassName,
   textClassName,
@@ -134,8 +145,11 @@ export function GooglePlayBadgeContent({
   return (
     <>
       <GooglePlayIcon
+        accentFill={iconAccentFill}
         className={iconClassName}
         height={iconHeight}
+        primaryFill={iconFill}
+        secondaryFill={iconSecondaryFill}
         width={iconWidth}
       />
       <div className={textWrapperClassName}>
