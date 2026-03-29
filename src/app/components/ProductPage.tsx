@@ -13,6 +13,7 @@ import virtualMuseumExperiencesImage from "../../assets/Gemini_Generated_Image_o
 import museumAnalyticsDashboardImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
 import campaignsVisibilityToolsImage from "../../assets/Gemini_Generated_Image_s8geucs8geucs8ge.png";
 import smartRecommendationsImage from "../../assets/Gemini_Generated_Image_f9xaxwf9xaxwf9xa.png";
+import productCtaBackgroundImage from "../../assets/b1251c3f409e602de6136d88c4a209a7a9e93625.png";
 
 const FEATURES = [
   {
@@ -132,8 +133,15 @@ export function ProductPage() {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="py-20 bg-[#341701]">
-        <div className="max-w-[800px] mx-auto px-6 text-center">
+      <SectionReveal className="relative overflow-hidden py-20 bg-[#341701]">
+        <div className="absolute inset-0 opacity-10">
+          <ImageWithFallback
+            src={productCtaBackgroundImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Explore What MuseoVerse Can Do</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">See the full platform in action. Book a demo or download the app today.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

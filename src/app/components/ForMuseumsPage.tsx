@@ -6,6 +6,7 @@ import {
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 import museumIntelligenceCenterImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
+import museumsCtaBackgroundImage from "../../assets/58e80897e985ec5465e26819389f874a356ff0a3.png";
 
 const BENEFITS = [
   { icon: BarChart3, title: "Real-Time Analytics", desc: "Monitor visitor engagement, scan activity, and storytelling usage with a live dashboard designed for cultural institutions." },
@@ -144,8 +145,15 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
-        <div className="max-w-[800px] mx-auto px-6 text-center">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#341701]">
+        <div className="absolute inset-0 opacity-10">
+          <ImageWithFallback
+            src={museumsCtaBackgroundImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Ready to Join the MuseoVerse Network?</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Discover how MuseoVerse can help your institution engage visitors, measure impact, and grow cultural reach.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

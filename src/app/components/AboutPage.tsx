@@ -4,6 +4,8 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 import challengeImage from "../../assets/Gemini_Generated_Image_z4i4ulz4i4ulz4i4.png";
 import teamImage from "../../assets/Team.png";
+import missionVisionBackgroundImage from "../../assets/0af092a3d5699a92e61a30940518c6aaeeb0e428.png";
+import joinTheJourneyBackgroundImage from "../../assets/07bc81a768f63fb90c646c2c895d4e10379d0f6e.png";
 
 export function AboutPage() {
   return (
@@ -51,8 +53,15 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Mission & Vision */}
-      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#341701]">
+        <div className="absolute inset-0 opacity-5">
+          <ImageWithFallback
+            src={missionVisionBackgroundImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10">
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <StaggerItem className="h-full">
               <div className="flex h-full flex-col bg-[#fbf9f4]/5 rounded-2xl p-8 md:p-10 border border-[#ffe088]/10 hover:-translate-y-1 transition-transform duration-300">
@@ -132,8 +141,15 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* CTA */}
-      <SectionReveal className="py-16 md:py-20 bg-[#341701]">
-        <div className="max-w-[800px] mx-auto px-6 text-center">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#341701]">
+        <div className="absolute inset-0 opacity-8">
+          <ImageWithFallback
+            src={joinTheJourneyBackgroundImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Join the Journey</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Whether as a museum partner, a curious visitor, or a like-minded collaborator — we'd love to hear from you.</p>
           <Link to="/contact" className="inline-flex items-center justify-center gap-2 font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all">

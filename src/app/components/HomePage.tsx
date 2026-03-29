@@ -19,6 +19,7 @@ import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
 import ecosystemPreviewImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
 import heroLeftFrameImage from "../../assets/pexels-photo-3957980.webp";
 import heroCenterFrameImage from "../../assets/64d0d95f9e8f747f189f5da697e0557efb1ff413.png";
+import howItWorksBackgroundImage from "../../assets/photo0jpg.jpg";
 
 const FEATURES = [
   { icon: ScanSearch, title: "AI Artifact Recognition", desc: "Point your camera at any artifact and instantly unlock its story, origin, and cultural significance." },
@@ -240,8 +241,15 @@ export function HomePage() {
       </SectionReveal>
 
       {/* HOW IT WORKS */}
-      <SectionReveal className="py-20 md:py-28 bg-[#341701]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-20 md:py-28 bg-[#341701]">
+        <div className="absolute inset-0 opacity-3">
+          <ImageWithFallback
+            src={howItWorksBackgroundImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#ffe088]/60">How It Works</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[40px] text-[#fbf9f4] mt-3">Four Steps to a Richer Experience</h2>

@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { Menu, X, Presentation, Smartphone } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
@@ -30,7 +30,6 @@ function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
@@ -168,10 +167,31 @@ function Navbar() {
   );
 }
 
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!("scrollRestoration" in window.history)) return;
+
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.key]);
+
+  return null;
+}
+
 function Footer() {
   return (
     <footer className="bg-[#341701] text-[#fbf9f4]/80">
-      <BlockReveal className="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <BlockReveal className="max-w-[1280px] mx-auto px-6 lg:px-10 py-12 lg:py-14">
         <StaggerGroup className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <StaggerItem className="col-span-2 md:col-span-1 lg:col-span-1">
@@ -236,7 +256,7 @@ function Footer() {
           </StaggerItem>
         </StaggerGroup>
 
-        <div className="border-t border-[#fbf9f4]/10 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-[#fbf9f4]/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-['Manrope'] text-[12px] text-[#fbf9f4]/30">
             &copy; 2026 MuseoVerse. All rights reserved.
           </p>
@@ -256,13 +276,12 @@ export function Layout() {
 
   return (
     <div className="bg-[#fbf9f4] min-h-screen font-['Manrope']">
+      <ScrollToTop />
       <Navbar />
       <main className="overflow-hidden">
-        <AnimatePresence mode="wait">
-          <PageTransition key={location.pathname}>
-            <Outlet />
-          </PageTransition>
-        </AnimatePresence>
+        <PageTransition key={location.pathname}>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
     </div>
