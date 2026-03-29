@@ -4,6 +4,7 @@ import {
   Target, Megaphone, ArrowRight
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 
 const FEATURES = [
   {
@@ -76,7 +77,7 @@ export function ProductPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="pt-[72px] pb-12 md:pb-20 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+      <SectionReveal className="pt-[72px] pb-12 md:pb-20 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Product</span>
           <h1 className="font-['Playfair_Display'] text-[34px] md:text-[52px] text-[#341701] mt-3 mb-5 leading-[1.1]">
@@ -86,15 +87,16 @@ export function ProductPage() {
             A visitor companion app powered by AI and a museum partner platform powered by data — working together to transform cultural engagement.
           </p>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* Features */}
-      <section className="py-16 md:py-24">
+      <SectionReveal className="py-16 md:py-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="space-y-20 md:space-y-28">
+          <StaggerGroup className="space-y-20 md:space-y-28" staggerChildren={0.16}>
             {FEATURES.map((f, i) => (
-              <div key={f.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:direction-rtl" : ""}`}>
-                <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
+              <StaggerItem key={f.title}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:direction-rtl" : ""}`}>
+                <BlockReveal className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
                   <div className="inline-flex items-center gap-2 bg-[#341701]/5 rounded-full px-3 py-1 mb-4">
                     <f.icon size={14} className="text-[#c9a84c]" />
                     <span className="font-['Manrope'] text-[11px] tracking-[1px] uppercase text-[#76593a]">
@@ -103,38 +105,39 @@ export function ProductPage() {
                   </div>
                   <h3 className="font-['Playfair_Display'] text-[24px] md:text-[32px] text-[#341701] mb-4">{f.title}</h3>
                   <p className="font-['Manrope'] text-[15px] text-[#76593a]/70 leading-[26px] mb-5">{f.desc}</p>
-                  <div className="bg-[#f5f0e4] rounded-xl p-5 border border-[#c9a84c]/10">
+                  <div className="bg-[#f5f0e4] rounded-xl p-5 border border-[#c9a84c]/10 hover:-translate-y-0.5 transition-transform duration-300">
                     <p className="font-['Manrope'] text-[13px] text-[#76593a] leading-[22px]">
                       <span className="text-[#c9a84c]">Impact:</span> {f.benefit}
                     </p>
                   </div>
-                </div>
-                <div className={`${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <div className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] border border-[#c9a84c]/10">
+                </BlockReveal>
+                <BlockReveal className={`${i % 2 === 1 ? "lg:order-1" : ""}`} delay={0.08}>
+                  <div className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] border border-[#c9a84c]/10 hover:-translate-y-1 hover:shadow-[0_20px_52px_rgba(52,23,1,0.12)] transition-all duration-300">
                     <ImageWithFallback src={f.img} alt={f.title} className="w-full h-[260px] md:h-[360px] object-cover" />
                   </div>
-                </div>
+                </BlockReveal>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* CTA */}
-      <section className="py-20 bg-[#341701]">
+      <SectionReveal className="py-20 bg-[#341701]">
         <div className="max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Explore What MuseoVerse Can Do</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">See the full platform in action. Book a demo or download the app today.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] transition-colors text-center">
+            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center">
               Book a Demo
             </Link>
-            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 transition-colors text-center">
+            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center">
               Download the App
             </Link>
           </div>
         </div>
-      </section>
+      </SectionReveal>
     </div>
   );
 }

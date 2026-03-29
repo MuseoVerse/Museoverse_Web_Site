@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router";
-import { Mail, MapPin, Phone, Send, ChevronDown, ChevronUp } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Mail, MapPin, Phone, Send, ChevronDown } from "lucide-react";
+import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 
 const FAQS = [
   { q: "How long does museum onboarding take?", a: "Typically 4-6 weeks depending on collection size. Our team handles most of the setup." },
@@ -17,7 +18,7 @@ export function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="pt-[72px] pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+      <SectionReveal className="pt-[72px] pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Contact</span>
           <h1 className="font-['Playfair_Display'] text-[34px] md:text-[48px] text-[#341701] mt-3 mb-4 leading-[1.1]">
@@ -27,15 +28,15 @@ export function ContactPage() {
             Whether you represent a museum or you're a curious visitor, we'd love to hear from you.
           </p>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* Form + Info */}
-      <section className="py-16 md:py-24">
+      <SectionReveal className="py-16 md:py-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl p-8 md:p-10 border border-[#c9a84c]/10 shadow-[0_8px_32px_rgba(52,23,1,0.04)]">
+            <BlockReveal className="lg:col-span-3">
+              <div className="bg-white rounded-2xl p-8 md:p-10 border border-[#c9a84c]/10 shadow-[0_8px_32px_rgba(52,23,1,0.04)] hover:shadow-[0_14px_36px_rgba(52,23,1,0.06)] transition-shadow duration-300">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-[#c9a84c]/10 flex items-center justify-center mx-auto mb-5">
@@ -95,7 +96,7 @@ export function ContactPage() {
                       </div>
                       <button
                         onClick={() => setSubmitted(true)}
-                        className="w-full font-['Manrope'] text-[14px] bg-[#341701] text-[#ffe088] rounded-xl py-3.5 hover:bg-[#4a2508] transition-colors"
+                        className="w-full font-['Manrope'] text-[14px] bg-[#341701] text-[#ffe088] rounded-xl py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(52,23,1,0.14)] transition-all"
                       >
                         {formType === "demo" ? "Request Demo" : "Send Message"}
                       </button>
@@ -103,11 +104,12 @@ export function ContactPage() {
                   </>
                 )}
               </div>
-            </div>
+            </BlockReveal>
 
             {/* Side Info */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="bg-[#f5f0e4] rounded-2xl p-7 border border-[#c9a84c]/10">
+            <StaggerGroup className="lg:col-span-2 space-y-6" delayChildren={0.08} staggerChildren={0.12}>
+              <StaggerItem>
+                <div className="bg-[#f5f0e4] rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
                 <h3 className="font-['Manrope'] text-[16px] text-[#341701] mb-5">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -132,10 +134,12 @@ export function ContactPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+                </div>
+              </StaggerItem>
 
               {/* Quick FAQ */}
-              <div className="bg-white rounded-2xl p-7 border border-[#c9a84c]/10">
+              <StaggerItem>
+                <div className="bg-white rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
                 <h3 className="font-['Manrope'] text-[16px] text-[#341701] mb-4">Quick Answers</h3>
                 <div className="space-y-0">
                   {FAQS.map((f, i) => (
@@ -145,19 +149,36 @@ export function ContactPage() {
                         onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                       >
                         <span className="font-['Manrope'] text-[13px] text-[#341701] pr-4">{f.q}</span>
-                        {faqOpen === i ? <ChevronUp size={14} className="text-[#c9a84c] shrink-0" /> : <ChevronDown size={14} className="text-[#76593a]/30 shrink-0" />}
+                        <motion.span
+                          animate={{ rotate: faqOpen === i ? 180 : 0 }}
+                          transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                          className="shrink-0"
+                        >
+                          <ChevronDown size={14} className={faqOpen === i ? "text-[#c9a84c]" : "text-[#76593a]/30"} />
+                        </motion.span>
                       </button>
-                      {faqOpen === i && (
-                        <p className="font-['Manrope'] text-[12px] text-[#76593a]/60 leading-[20px] pb-3.5">{f.a}</p>
-                      )}
+                      <AnimatePresence initial={false}>
+                        {faqOpen === i && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <p className="font-['Manrope'] text-[12px] text-[#76593a]/60 leading-[20px] pb-3.5">{f.a}</p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
+                </div>
+              </StaggerItem>
+            </StaggerGroup>
           </div>
         </div>
-      </section>
+      </SectionReveal>
     </div>
   );
 }
