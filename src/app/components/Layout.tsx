@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
+import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
 
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
@@ -208,18 +209,23 @@ function Footer() {
             <h4 className="font-['Manrope'] text-[11px] tracking-[2px] uppercase text-[#ffe088]/70 mb-5">Download</h4>
             <div className="space-y-3">
               <a href="#" className="flex items-center gap-3 bg-[#fbf9f4]/5 hover:bg-[#fbf9f4]/10 hover:-translate-y-0.5 rounded-xl px-4 py-3 transition-all group">
-                <svg width="20" height="24" viewBox="0 0 20 24" fill="#fbf9f4" opacity="0.6"><path d="M17.05 12.54c-.02-2.47 2.02-3.66 2.11-3.71a4.56 4.56 0 00-3.59-1.94c-1.52-.16-2.98.9-3.76.9s-1.97-.88-3.24-.86a4.78 4.78 0 00-4.03 2.45c-1.72 2.98-.44 7.4 1.24 9.82.82 1.18 1.79 2.52 3.07 2.47 1.23-.05 1.7-.8 3.19-.8s1.91.8 3.21.77c1.33-.02 2.16-1.21 2.97-2.4a10.7 10.7 0 001.34-2.76 4.39 4.39 0 01-2.66-4.04l.15.1zM14.28 4.94a4.48 4.48 0 001.03-3.22A4.56 4.56 0 0012.35 3a4.27 4.27 0 00-1.06 3.06 3.78 3.78 0 002.99-1.12z"/></svg>
-                <div>
-                  <div className="font-['Manrope'] text-[10px] text-[#fbf9f4]/40">Download on the</div>
-                  <div className="font-['Manrope'] text-[13px] text-[#fbf9f4]/80">App Store</div>
-                </div>
+                <AppStoreBadgeContent
+                  iconFill="#ffe088"
+                  iconHeight={24}
+                  iconOpacity={1}
+                  iconWidth={20}
+                  subtitleClassName="text-[#fbf9f4]/40"
+                  textClassName="text-[13px] text-[#fbf9f4]/80"
+                />
               </a>
               <a href="#" className="flex items-center gap-3 bg-[#fbf9f4]/5 hover:bg-[#fbf9f4]/10 hover:-translate-y-0.5 rounded-xl px-4 py-3 transition-all group">
-                <svg width="20" height="22" viewBox="0 0 20 22" fill="#fbf9f4" opacity="0.6"><path d="M1 1.34l8.84 9.13L1 19.66c-.17-.36-.27-.77-.27-1.2V2.54c0-.43.1-.84.27-1.2zm1.15-1.27L12.32 9.4l-2.6 2.69L2.15.07zM12.32 11.6l-2.6-2.69L2.15 20.93l10.17-9.33zM17.9 9.54L14 11.5l-2.98-3.08 2.98-3.08 3.9 1.96c.7.35.7.93 0 1.28v-.04z"/></svg>
-                <div>
-                  <div className="font-['Manrope'] text-[10px] text-[#fbf9f4]/40">Get it on</div>
-                  <div className="font-['Manrope'] text-[13px] text-[#fbf9f4]/80">Google Play</div>
-                </div>
+                <GooglePlayBadgeContent
+                  iconClassName="opacity-80"
+                  iconHeight={22}
+                  iconWidth={20}
+                  subtitleClassName="text-[#fbf9f4]/40"
+                  textClassName="text-[13px] text-[#fbf9f4]/80"
+                />
               </a>
             </div>
           </StaggerItem>

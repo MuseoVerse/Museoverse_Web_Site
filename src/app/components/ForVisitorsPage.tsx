@@ -11,6 +11,7 @@ import {
   StaggerGroup,
   StaggerItem,
 } from "./animations";
+import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
 
 const APP_FEATURES = [
   { icon: ScanSearch, title: "Scan Any Artifact", desc: "Point your phone at any artifact and instantly discover its story, origin, and cultural significance through AI." },
@@ -43,18 +44,21 @@ export function ForVisitorsPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-8">
                 <a href="#" className="flex items-center gap-3 bg-[#341701] rounded-xl px-5 py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 transition-all">
-                  <svg width="18" height="22" viewBox="0 0 20 24" fill="#ffe088"><path d="M17.05 12.54c-.02-2.47 2.02-3.66 2.11-3.71a4.56 4.56 0 00-3.59-1.94c-1.52-.16-2.98.9-3.76.9s-1.97-.88-3.24-.86a4.78 4.78 0 00-4.03 2.45c-1.72 2.98-.44 7.4 1.24 9.82.82 1.18 1.79 2.52 3.07 2.47 1.23-.05 1.7-.8 3.19-.8s1.91.8 3.21.77c1.33-.02 2.16-1.21 2.97-2.4a10.7 10.7 0 001.34-2.76 4.39 4.39 0 01-2.66-4.04l.15.1zM14.28 4.94a4.48 4.48 0 001.03-3.22A4.56 4.56 0 0012.35 3a4.27 4.27 0 00-1.06 3.06 3.78 3.78 0 002.99-1.12z"/></svg>
-                  <div>
-                    <div className="font-['Manrope'] text-[10px] text-[#ffe088]/60">Download on the</div>
-                    <div className="font-['Manrope'] text-[15px] text-[#ffe088]">App Store</div>
-                  </div>
+                  <AppStoreBadgeContent
+                    iconFill="#ffe088"
+                    iconHeight={22}
+                    iconWidth={18}
+                    subtitleClassName="text-[#ffe088]/60"
+                    textClassName="text-[15px] text-[#ffe088]"
+                  />
                 </a>
                 <a href="#" className="flex items-center gap-3 bg-[#341701] rounded-xl px-5 py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 transition-all">
-                  <svg width="18" height="20" viewBox="0 0 20 22" fill="#ffe088"><path d="M1 1.34l8.84 9.13L1 19.66c-.17-.36-.27-.77-.27-1.2V2.54c0-.43.1-.84.27-1.2zm1.15-1.27L12.32 9.4l-2.6 2.69L2.15.07zM12.32 11.6l-2.6-2.69L2.15 20.93l10.17-9.33zM17.9 9.54L14 11.5l-2.98-3.08 2.98-3.08 3.9 1.96c.7.35.7.93 0 1.28v-.04z"/></svg>
-                  <div>
-                    <div className="font-['Manrope'] text-[10px] text-[#ffe088]/60">Get it on</div>
-                    <div className="font-['Manrope'] text-[15px] text-[#ffe088]">Google Play</div>
-                  </div>
+                  <GooglePlayBadgeContent
+                    iconHeight={20}
+                    iconWidth={18}
+                    subtitleClassName="text-[#ffe088]/60"
+                    textClassName="text-[15px] text-[#ffe088]"
+                  />
                 </a>
               </div>
             </BlockReveal>
@@ -150,18 +154,23 @@ export function ForVisitorsPage() {
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Download MuseoVerse and transform your next museum visit into an unforgettable journey.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#" className="flex items-center gap-3 bg-[#ffe088] rounded-xl px-6 py-4 hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all">
-              <svg width="18" height="22" viewBox="0 0 20 24" fill="#341701"><path d="M17.05 12.54c-.02-2.47 2.02-3.66 2.11-3.71a4.56 4.56 0 00-3.59-1.94c-1.52-.16-2.98.9-3.76.9s-1.97-.88-3.24-.86a4.78 4.78 0 00-4.03 2.45c-1.72 2.98-.44 7.4 1.24 9.82.82 1.18 1.79 2.52 3.07 2.47 1.23-.05 1.7-.8 3.19-.8s1.91.8 3.21.77c1.33-.02 2.16-1.21 2.97-2.4a10.7 10.7 0 001.34-2.76 4.39 4.39 0 01-2.66-4.04l.15.1zM14.28 4.94a4.48 4.48 0 001.03-3.22A4.56 4.56 0 0012.35 3a4.27 4.27 0 00-1.06 3.06 3.78 3.78 0 002.99-1.12z"/></svg>
-              <div className="text-left">
-                <div className="font-['Manrope'] text-[10px] text-[#341701]/60">Download on the</div>
-                <div className="font-['Manrope'] text-[15px] text-[#341701]">App Store</div>
-              </div>
+              <AppStoreBadgeContent
+                iconFill="#ffe088"
+                iconHeight={22}
+                iconWidth={18}
+                textWrapperClassName="text-left"
+                subtitleClassName="text-[#341701]/60"
+                textClassName="text-[15px] text-[#341701]"
+              />
             </a>
             <a href="#" className="flex items-center gap-3 bg-[#ffe088] rounded-xl px-6 py-4 hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all">
-              <svg width="18" height="20" viewBox="0 0 20 22" fill="#341701"><path d="M1 1.34l8.84 9.13L1 19.66c-.17-.36-.27-.77-.27-1.2V2.54c0-.43.1-.84.27-1.2zm1.15-1.27L12.32 9.4l-2.6 2.69L2.15.07zM12.32 11.6l-2.6-2.69L2.15 20.93l10.17-9.33zM17.9 9.54L14 11.5l-2.98-3.08 2.98-3.08 3.9 1.96c.7.35.7.93 0 1.28v-.04z"/></svg>
-              <div className="text-left">
-                <div className="font-['Manrope'] text-[10px] text-[#341701]/60">Get it on</div>
-                <div className="font-['Manrope'] text-[15px] text-[#341701]">Google Play</div>
-              </div>
+              <GooglePlayBadgeContent
+                iconHeight={20}
+                iconWidth={18}
+                textWrapperClassName="text-left"
+                subtitleClassName="text-[#341701]/60"
+                textClassName="text-[15px] text-[#341701]"
+              />
             </a>
           </div>
         </div>
