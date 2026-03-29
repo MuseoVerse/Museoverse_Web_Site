@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { useState, useEffect, useLayoutEffect } from "react";
-import { Menu, X, Presentation, Smartphone } from "lucide-react";
+import { Menu, X, Presentation, Download } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
 import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
@@ -86,7 +86,7 @@ function Navbar() {
             to="/for-visitors"
             className="font-['Manrope'] text-[13px] tracking-[0.3px] px-5 py-2.5 rounded-full bg-[#341701] text-[#ffe088] hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(52,23,1,0.18)] transition-all duration-300 inline-flex items-center gap-2"
           >
-            <Smartphone size={14} strokeWidth={2} />
+            <Download size={14} strokeWidth={2} />
             Download App
           </Link>
         </div>
@@ -155,7 +155,7 @@ function Navbar() {
                   to="/for-visitors"
                   className="font-['Manrope'] text-[14px] text-center py-3 rounded-full bg-[#341701] text-[#ffe088] inline-flex items-center justify-center gap-2"
                 >
-                  <Smartphone size={15} strokeWidth={2} />
+                  <Download size={15} strokeWidth={2} />
                   Download App
                 </Link>
               </motion.div>

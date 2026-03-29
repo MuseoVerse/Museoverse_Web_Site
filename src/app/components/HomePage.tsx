@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ScanSearch, BookOpen, Globe, Users, BarChart3, Sparkles,
-  ChevronDown, Building2, Smartphone, ArrowRight, Presentation,
+  ChevronDown, Building2, Smartphone, ArrowRight, Presentation, Download,
   Eye, MessageCircle, Map, TrendingUp
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -163,7 +163,7 @@ export function HomePage() {
                   to="/for-visitors"
                   className="w-full sm:w-auto font-['Manrope'] text-[14px] tracking-[0.3px] px-7 py-3.5 rounded-full border border-[#c9a84c]/40 text-[#341701] hover:bg-[#341701]/5 hover:-translate-y-0.5 transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
                 >
-                  <Smartphone size={16} strokeWidth={2} />
+                  <Download size={16} strokeWidth={2} />
                   Download App
                 </Link>
               </div>
@@ -471,7 +471,7 @@ export function HomePage() {
               Book a Demo
             </Link>
             <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
-              <Smartphone size={16} strokeWidth={2} />
+              <Download size={16} strokeWidth={2} />
               Download the App
             </Link>
           </div>

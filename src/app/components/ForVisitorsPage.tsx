@@ -160,7 +160,7 @@ export function ForVisitorsPage() {
                 iconFill="#5a2a07"
                 iconHeight={28}
                 iconWidth={28}
-                textWrapperClassName="text-left"
+                textWrapperClassName="text-left whitespace-nowrap"
                 subtitleClassName="text-[#341701]/60"
                 textClassName="text-[15px] text-[#341701]"
               />
@@ -172,7 +172,7 @@ export function ForVisitorsPage() {
                 iconHeight={26}
                 iconSecondaryFill="#8a5417"
                 iconWidth={28}
-                textWrapperClassName="text-left"
+                textWrapperClassName="text-left whitespace-nowrap"
                 subtitleClassName="text-[#341701]/60"
                 textClassName="text-[15px] text-[#341701]"
               />

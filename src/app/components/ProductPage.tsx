@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import {
   ScanSearch, BookOpen, Sparkles, Users, Globe, BarChart3,
-  Target, Megaphone, ArrowRight, Presentation, Smartphone
+  Target, Megaphone, ArrowRight, Presentation, Download
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
@@ -150,7 +150,7 @@ export function ProductPage() {
               Book a Demo
             </Link>
             <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
-              <Smartphone size={16} strokeWidth={2} />
+              <Download size={16} strokeWidth={2} />
               Download the App
             </Link>
           </div>
