@@ -1,10 +1,17 @@
 # MuseoVerse Website
 
+![Live App](https://img.shields.io/badge/Live%20App-museoverse.vercel.app-8b5e34?style=for-the-badge&logo=vercel&logoColor=white)
+![React 18](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=0b0f19)
+![Vite 6](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Motion](https://img.shields.io/badge/Motion-Animated-111827?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-Desktop%20%26%20Mobile-c9a84c?style=for-the-badge)
+
 A responsive multi-page marketing website for MuseoVerse, built with React, Vite, Tailwind CSS v4, Motion, and React Router.
 
 This repository contains the public-facing website for the MuseoVerse platform. It presents the product story, visitor value proposition, museum partner value proposition, brand story, and contact flow through a polished desktop-and-mobile experience with motion, section reveals, and strong visual branding.
 
-## What This Project Is
+## ✨ What This Project Is
 
 This project is a front-end marketing website for MuseoVerse.
 
@@ -19,13 +26,13 @@ It is not the museum partner dashboard itself.
 
 That distinction matters because this website focuses on positioning, storytelling, conversion, and brand communication rather than authenticated product workflows or live operational data.
 
-## Live App
+## 🌍 Live App
 
 The website is live at:
 
 - https://museoverse.vercel.app/
 
-## Current Status
+## 📌 Current Status
 
 The live routed website currently includes 6 primary pages:
 
@@ -47,7 +54,7 @@ The site currently includes:
 
 The site is currently a front-end experience. It does not yet connect its contact form, store buttons, or legal links to production services.
 
-## What The Website Communicates
+## 🧠 What The Website Communicates
 
 MuseoVerse is presented as a two-sided cultural technology platform:
 
@@ -67,7 +74,7 @@ MuseoVerse is presented as a two-sided cultural technology platform:
 
 Across the website, the product narrative is consistently framed around intelligent discovery, cultural accessibility, and measurable institutional impact.
 
-## Site Navigation
+## 🧭 Site Navigation
 
 The main route definitions live in `src/app/routes.tsx`.
 
@@ -86,11 +93,11 @@ Important route behavior:
 - the shared layout handles route transitions
 - a wildcard route falls back to the home page
 
-## Page Breakdown
+## 📄 Page Breakdown
 
 Below is the current page-by-page breakdown of the live routed experience.
 
-### 1. Home
+### 1. 🏠 Home
 
 File: `src/app/components/HomePage.tsx`
 
@@ -118,7 +125,7 @@ Notable implementation details:
 - shared CTA styling used across the site
 - subtle image-backed section overlays on selected brown sections
 
-### 2. Product
+### 2. 🧩 Product
 
 File: `src/app/components/ProductPage.tsx`
 
@@ -148,7 +155,7 @@ Notable implementation details:
 - each feature includes a clear impact statement
 - local asset imagery is used throughout the page
 
-### 3. For Museums
+### 3. 🏛️ For Museums
 
 File: `src/app/components/ForMuseumsPage.tsx`
 
@@ -171,7 +178,7 @@ Notable implementation details:
 - the page uses tighter section spacing than its earlier version
 - partnership steps and benefit cards have been normalized for equal heights
 
-### 4. For Visitors
+### 4. 📱 For Visitors
 
 File: `src/app/components/ForVisitorsPage.tsx`
 
@@ -193,7 +200,7 @@ Notable implementation details:
 - the `Start Your Discovery` buttons use a brighter CTA style with locally customized icon treatment
 - visitor feature cards are normalized for equal height
 
-### 5. About
+### 5. ℹ️ About
 
 File: `src/app/components/AboutPage.tsx`
 
@@ -216,7 +223,7 @@ Notable implementation details:
 - mission/vision and CTA sections use subtle background-image overlays
 - cards in values and mission/vision sections are normalized for consistent sizing
 
-### 6. Contact
+### 6. ✉️ Contact
 
 File: `src/app/components/ContactPage.tsx`
 
@@ -254,11 +261,11 @@ Important reality:
 - submission is simulated in local state
 - no real backend, API, email service, or CRM integration is connected yet
 
-## Responsive Design and Interaction System
+## 📱 Responsive Design and Interaction System
 
 This site has been actively tuned for both desktop and mobile layouts.
 
-### Shared responsive patterns
+### 📐 Shared Responsive Patterns
 
 - mobile menu and desktop navigation are handled by the shared layout
 - CTA buttons switch between stacked and inline layouts where appropriate
@@ -266,7 +273,7 @@ This site has been actively tuned for both desktop and mobile layouts.
 - cards and grids collapse cleanly from multi-column desktop layouts to single-column mobile flows
 - route changes always start from the top of the destination page
 
-### Shared motion system
+### 🎞️ Shared Motion System
 
 Motion is implemented through `motion/react` and centralized in `src/app/components/animations.tsx`.
 
@@ -288,7 +295,7 @@ Behavioral highlights:
 - moving institution marquees
 - reduced-motion support through `MotionConfig reducedMotion="user"`
 
-## Shared Components
+## 🧩 Shared Components
 
 ### `Layout.tsx`
 
@@ -347,7 +354,7 @@ Purpose:
 
 - shared image rendering helper used throughout the site
 
-## Styling System
+## 🎨 Styling System
 
 Global styling is composed through the files in `src/styles/`.
 
@@ -385,7 +392,7 @@ Contains:
 - reduced-motion fallbacks
 - global `scroll-behavior`
 
-### Visual direction
+### 🖼️ Visual Direction
 
 The website's visual system is defined by:
 
@@ -396,9 +403,9 @@ The website's visual system is defined by:
 - Manrope for interface and body copy
 - rounded cards and soft shadow treatments
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-### Core runtime
+### Core Runtime
 
 - React 18
 - React DOM 18
@@ -412,7 +419,7 @@ The website's visual system is defined by:
 - Lucide React
 - Tailwind utility-based styling
 
-### Included UI/dependency ecosystem
+### Included UI / Dependency Ecosystem
 
 The repository also includes a larger generated dependency set and a library of reusable UI primitives under `src/app/components/ui/`.
 
@@ -433,7 +440,7 @@ Important note:
 - the current live routed website does not rely on all installed dependencies
 - many dependencies and the `ui/` primitives are part of the generated project scaffold rather than the active marketing-site surface
 
-## Routing Architecture
+## 🧭 Routing Architecture
 
 Main app flow:
 
@@ -447,7 +454,7 @@ Router type:
 
 - `createBrowserRouter`
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 Museoverse_Web_Site/
@@ -489,7 +496,7 @@ Museoverse_Web_Site/
 `- README.md
 ```
 
-## Standalone Imported Screens
+## 🧪 Standalone Imported Screens
 
 The `src/imports/` folder contains generated Figma screens and helper modules that are not part of the active routed website.
 
@@ -523,7 +530,7 @@ Important note:
 - these files are not connected to the live router
 - they are best understood as generated design artifacts or future exploration screens
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Install dependencies
 
@@ -543,14 +550,14 @@ npm run dev
 npm run build
 ```
 
-## Available Scripts
+## 📜 Available Scripts
 
 From `package.json`:
 
 - `npm run dev` - starts the Vite development server
 - `npm run build` - creates the production build
 
-## TypeScript and Vite Notes
+## ⚙️ TypeScript and Vite Notes
 
 ### `tsconfig.json`
 
@@ -580,7 +587,7 @@ This file includes:
 - Vite client types
 - support for generated `figma:asset/*` imports
 
-## Editor and Workspace Notes
+## 🧼 Editor and Workspace Notes
 
 This repo includes `.vscode/settings.json` to suppress false CSS warnings caused by Tailwind v4 syntax in editors that rely on the default CSS validator.
 
@@ -592,7 +599,7 @@ Current workspace settings disable:
 
 This is an editor convenience only and does not affect the application output.
 
-## Assets and Branding
+## 🖼️ Assets and Branding
 
 The current website uses:
 
@@ -607,11 +614,11 @@ General note:
 - the repository contains many PNG-based assets
 - several of them are large and could benefit from optimization
 
-## Current Product Reality
+## 🧠 Current Product Reality
 
 The most important thing to understand about this repository is that it is a polished front-end marketing website, not yet a fully wired production web platform.
 
-### What is already real
+### ✅ What Is Already Real
 
 - routed multi-page navigation
 - responsive layouts across desktop and mobile
@@ -620,7 +627,7 @@ The most important thing to understand about this repository is that it is a pol
 - contact form state handling and validation
 - branding, imagery, and CTA structure
 
-### What is still local-only or placeholder
+### 🧪 What Is Still Local-Only or Placeholder
 
 - contact form submission is simulated
 - no backend or API integration is connected
@@ -630,7 +637,7 @@ The most important thing to understand about this repository is that it is a pol
 - standalone imported screens are not routed
 - many installed dependencies are not essential to the live website flow
 
-## Known Limitations
+## ⚠️ Known Limitations
 
 - there is no real form submission endpoint
 - there is no analytics, CRM, or email automation integration
@@ -638,7 +645,7 @@ The most important thing to understand about this repository is that it is a pol
 - some copied/generated text content may still contain encoding artifacts in source files
 - the asset set is heavier than necessary for an optimized production marketing site
 
-## Good Next Steps
+## 🧭 Good Next Steps
 
 If this website is going to move from polished prototype/marketing surface to a fully production-ready product site, the most valuable next steps would be:
 
@@ -651,7 +658,7 @@ If this website is going to move from polished prototype/marketing surface to a 
 7. add linting, formatting, and test workflows
 8. fix any remaining source-text encoding artifacts
 
-## Summary
+## 🏁 Summary
 
 MuseoVerse Website is currently a refined, responsive, animated marketing site for the MuseoVerse platform with:
 
