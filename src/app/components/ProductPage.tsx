@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import {
   ScanSearch, BookOpen, Sparkles, Users, Globe, BarChart3,
-  Target, Megaphone, ArrowRight
+  Target, Megaphone, ArrowRight, Presentation, Smartphone
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
@@ -137,10 +137,12 @@ export function ProductPage() {
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Explore What MuseoVerse Can Do</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">See the full platform in action. Book a demo or download the app today.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center">
+            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center inline-flex items-center justify-center gap-2">
+              <Presentation size={16} strokeWidth={2} />
               Book a Demo
             </Link>
-            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center">
+            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
+              <Smartphone size={16} strokeWidth={2} />
               Download the App
             </Link>
           </div>

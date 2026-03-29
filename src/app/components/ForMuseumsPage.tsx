@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import {
   BarChart3, TrendingUp, Users, Eye, Target, Megaphone,
-  Shield, HeartHandshake, ArrowRight, CheckCircle2
+  Shield, HeartHandshake, ArrowRight, CheckCircle2, Presentation, Building2, Mail
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
@@ -39,10 +39,12 @@ export function ForMuseumsPage() {
               MuseoVerse gives museums the tools to understand visitors, measure impact, and enhance the museum experience — without losing the soul of cultural storytelling.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="font-['Manrope'] text-[14px] px-7 py-3.5 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center">
+              <Link to="/contact" className="font-['Manrope'] text-[14px] px-7 py-3.5 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center inline-flex items-center justify-center gap-2">
+                <Presentation size={16} strokeWidth={2} />
                 Book a Demo
               </Link>
-              <Link to="/contact" className="font-['Manrope'] text-[14px] px-7 py-3.5 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center">
+              <Link to="/contact" className="font-['Manrope'] text-[14px] px-7 py-3.5 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
+                <Building2 size={16} strokeWidth={2} />
                 Become a Partner
               </Link>
             </div>
@@ -147,10 +149,12 @@ export function ForMuseumsPage() {
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Ready to Join the MuseoVerse Network?</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Discover how MuseoVerse can help your institution engage visitors, measure impact, and grow cultural reach.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center">
+            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center inline-flex items-center justify-center gap-2">
+              <Presentation size={16} strokeWidth={2} />
               Book a Demo
             </Link>
-            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center">
+            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
+              <Mail size={16} strokeWidth={2} />
               Contact the Team
             </Link>
           </div>

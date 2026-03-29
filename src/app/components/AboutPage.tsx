@@ -1,7 +1,9 @@
 import { Link } from "react-router";
-import { Heart, Lightbulb, Globe, Shield } from "lucide-react";
+import { Heart, Lightbulb, Globe, Shield, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
+import challengeImage from "../../assets/Gemini_Generated_Image_z4i4ulz4i4ulz4i4.png";
+import teamImage from "../../assets/Team.png";
 
 export function AboutPage() {
   return (
@@ -28,7 +30,7 @@ export function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] hover:-translate-y-1 transition-transform duration-300">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1563474369245-bb6cf001f72c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNldW0lMjBoYWxsd2F5JTIwcmVuYWlzc2FuY2UlMjBwYWludGluZ3N8ZW58MXx8fHwxNzc0ODA2OTgzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={challengeImage}
                 alt="Museum Gallery" className="w-full h-[320px] md:h-[420px] object-cover"
               />
             </BlockReveal>
@@ -52,8 +54,8 @@ export function AboutPage() {
       <SectionReveal className="py-16 md:py-20 bg-[#341701]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <StaggerItem>
-              <div className="bg-[#fbf9f4]/5 rounded-2xl p-8 md:p-10 border border-[#ffe088]/10 hover:-translate-y-1 transition-transform duration-300">
+            <StaggerItem className="h-full">
+              <div className="flex h-full flex-col bg-[#fbf9f4]/5 rounded-2xl p-8 md:p-10 border border-[#ffe088]/10 hover:-translate-y-1 transition-transform duration-300">
               <Lightbulb size={28} className="text-[#ffe088] mb-5" />
               <h3 className="font-['Playfair_Display'] text-[24px] text-[#fbf9f4] mb-4">Our Mission</h3>
               <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/60 leading-[26px]">
@@ -61,8 +63,8 @@ export function AboutPage() {
               </p>
               </div>
             </StaggerItem>
-            <StaggerItem>
-              <div className="bg-[#fbf9f4]/5 rounded-2xl p-8 md:p-10 border border-[#ffe088]/10 hover:-translate-y-1 transition-transform duration-300">
+            <StaggerItem className="h-full">
+              <div className="flex h-full flex-col bg-[#fbf9f4]/5 rounded-2xl p-8 md:p-10 border border-[#ffe088]/10 hover:-translate-y-1 transition-transform duration-300">
               <Globe size={28} className="text-[#ffe088] mb-5" />
               <h3 className="font-['Playfair_Display'] text-[24px] text-[#fbf9f4] mb-4">Our Vision</h3>
               <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/60 leading-[26px]">
@@ -88,8 +90,8 @@ export function AboutPage() {
               { icon: Globe, title: "Universal Access", desc: "Culture belongs to everyone. We work to make museum experiences accessible regardless of location or ability." },
               { icon: Shield, title: "Institutional Trust", desc: "Museums trust us with their collections and data. We honor that trust with security, transparency, and care." },
             ].map((v) => (
-              <StaggerItem key={v.title}>
-                <div className="bg-[#f5f0e4] rounded-2xl p-7 border border-[#c9a84c]/10 text-center hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(52,23,1,0.08)] transition-all duration-300">
+              <StaggerItem key={v.title} className="h-full">
+                <div className="flex h-full flex-col bg-[#f5f0e4] rounded-2xl p-7 border border-[#c9a84c]/10 text-center hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(52,23,1,0.08)] transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-[#341701] flex items-center justify-center mx-auto mb-5">
                     <v.icon size={20} className="text-[#ffe088]" />
                   </div>
@@ -121,7 +123,7 @@ export function AboutPage() {
             </BlockReveal>
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] hover:-translate-y-1 transition-transform duration-300" delay={0.08}>
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwZGl2ZXJzZSUyMHByb2Zlc3Npb25hbCUyMG9mZmljZXxlbnwxfHx8fDE3NzQ4MDY5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src={teamImage}
                 alt="MuseoVerse Team" className="w-full h-[320px] md:h-[400px] object-cover"
               />
             </BlockReveal>
@@ -134,7 +136,8 @@ export function AboutPage() {
         <div className="max-w-[800px] mx-auto px-6 text-center">
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[38px] text-[#fbf9f4] mb-4">Join the Journey</h2>
           <p className="font-['Manrope'] text-[15px] text-[#fbf9f4]/50 mb-10">Whether as a museum partner, a curious visitor, or a like-minded collaborator — we'd love to hear from you.</p>
-          <Link to="/contact" className="inline-block font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all">
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all">
+            <Mail size={16} strokeWidth={2} />
             Get in Touch
           </Link>
         </div>

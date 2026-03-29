@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Presentation, Smartphone } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
 import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
@@ -78,14 +78,16 @@ function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact"
-            className="font-['Manrope'] text-[13px] tracking-[0.3px] px-5 py-2.5 rounded-full border border-[#c9a84c]/40 text-[#341701] hover:bg-[#341701] hover:text-[#fbf9f4] hover:border-[#341701] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(52,23,1,0.12)] transition-all duration-300"
+            className="font-['Manrope'] text-[13px] tracking-[0.3px] px-5 py-2.5 rounded-full border border-[#c9a84c]/40 text-[#341701] hover:bg-[#341701] hover:text-[#fbf9f4] hover:border-[#341701] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(52,23,1,0.12)] transition-all duration-300 inline-flex items-center gap-2"
           >
+            <Presentation size={14} strokeWidth={2} />
             Book a Demo
           </Link>
           <Link
             to="/for-visitors"
-            className="font-['Manrope'] text-[13px] tracking-[0.3px] px-5 py-2.5 rounded-full bg-[#341701] text-[#ffe088] hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(52,23,1,0.18)] transition-all duration-300"
+            className="font-['Manrope'] text-[13px] tracking-[0.3px] px-5 py-2.5 rounded-full bg-[#341701] text-[#ffe088] hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(52,23,1,0.18)] transition-all duration-300 inline-flex items-center gap-2"
           >
+            <Smartphone size={14} strokeWidth={2} />
             Download App
           </Link>
         </div>
@@ -145,14 +147,16 @@ function Navbar() {
               >
                 <Link
                   to="/contact"
-                  className="font-['Manrope'] text-[14px] text-center py-3 rounded-full border border-[#c9a84c]/40 text-[#341701]"
+                  className="font-['Manrope'] text-[14px] text-center py-3 rounded-full border border-[#c9a84c]/40 text-[#341701] inline-flex items-center justify-center gap-2"
                 >
+                  <Presentation size={15} strokeWidth={2} />
                   Book a Demo
                 </Link>
                 <Link
                   to="/for-visitors"
-                  className="font-['Manrope'] text-[14px] text-center py-3 rounded-full bg-[#341701] text-[#ffe088]"
+                  className="font-['Manrope'] text-[14px] text-center py-3 rounded-full bg-[#341701] text-[#ffe088] inline-flex items-center justify-center gap-2"
                 >
+                  <Smartphone size={15} strokeWidth={2} />
                   Download App
                 </Link>
               </motion.div>
@@ -168,9 +172,9 @@ function Footer() {
   return (
     <footer className="bg-[#341701] text-[#fbf9f4]/80">
       <BlockReveal className="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-        <StaggerGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <StaggerGroup className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
-          <StaggerItem className="lg:col-span-1">
+          <StaggerItem className="col-span-2 md:col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
               <img
                 src={museoVerseLightLogo}
@@ -206,7 +210,7 @@ function Footer() {
           </StaggerItem>
 
           {/* Download */}
-          <StaggerItem>
+          <StaggerItem className="col-span-2 md:col-span-1 lg:col-span-1">
             <h4 className="font-['Manrope'] text-[11px] tracking-[2px] uppercase text-[#ffe088]/70 mb-5">Download</h4>
             <div className="space-y-3">
               <a href="#" className="flex items-center gap-3 bg-[#fbf9f4]/5 hover:bg-[#fbf9f4]/10 hover:-translate-y-0.5 rounded-xl px-4 py-3 transition-all group">

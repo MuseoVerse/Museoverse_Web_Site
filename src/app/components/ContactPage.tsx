@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Mail, MapPin, Phone, Send, ChevronDown } from "lucide-react";
+import { Mail, MapPin, Phone, Send, ChevronDown, Presentation, Building2, Users, CircleHelp } from "lucide-react";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 
 const FAQS = [
@@ -14,6 +14,22 @@ export function ContactPage() {
   const [formType, setFormType] = useState("demo");
   const [submitted, setSubmitted] = useState(false);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const contactTypes = [
+    { id: "demo", label: "Book a Demo", icon: Presentation },
+    { id: "museum", label: "Museum Partnership", icon: Building2 },
+    { id: "visitor", label: "Visitor Inquiry", icon: Users },
+    { id: "general", label: "General Question", icon: CircleHelp },
+  ] as const;
+
+  useEffect(() => {
+    if (!submitted) return;
+
+    const resetTimer = window.setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+
+    return () => window.clearTimeout(resetTimer);
+  }, [submitted]);
 
   return (
     <div>
@@ -36,34 +52,45 @@ export function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <BlockReveal className="lg:col-span-3">
-              <div className="bg-white rounded-2xl p-8 md:p-10 border border-[#c9a84c]/10 shadow-[0_8px_32px_rgba(52,23,1,0.04)] hover:shadow-[0_14px_36px_rgba(52,23,1,0.06)] transition-shadow duration-300">
-                {submitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-[#c9a84c]/10 flex items-center justify-center mx-auto mb-5">
-                      <Send size={28} className="text-[#c9a84c]" />
-                    </div>
-                    <h3 className="font-['Playfair_Display'] text-[24px] text-[#341701] mb-3">Message Sent</h3>
-                    <p className="font-['Manrope'] text-[14px] text-[#76593a]/60">Thank you for reaching out. Our team will get back to you shortly.</p>
-                  </div>
-                ) : (
-                  <>
+              <div className="flex min-h-[680px] flex-col bg-white rounded-2xl p-8 md:min-h-[640px] md:p-10 border border-[#c9a84c]/10 shadow-[0_8px_32px_rgba(52,23,1,0.04)] hover:shadow-[0_14px_36px_rgba(52,23,1,0.06)] transition-shadow duration-300">
+                <AnimatePresence mode="wait" initial={false}>
+                  {submitted ? (
+                    <motion.div
+                      key="contact-success"
+                      initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -12, scale: 0.98 }}
+                      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                      className="flex flex-1 flex-col items-center justify-center text-center py-12"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-[#c9a84c]/10 flex items-center justify-center mx-auto mb-5">
+                        <Send size={28} className="text-[#c9a84c]" />
+                      </div>
+                      <h3 className="font-['Playfair_Display'] text-[24px] text-[#341701] mb-3">Message Sent</h3>
+                      <p className="font-['Manrope'] text-[14px] text-[#76593a]/60">Thank you for reaching out. Our team will get back to you shortly.</p>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="contact-form"
+                      initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -12, scale: 0.98 }}
+                      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                      className="flex flex-1 flex-col"
+                    >
                     {/* Type Selection */}
                     <div className="flex flex-wrap gap-2 mb-8">
-                      {[
-                        { id: "demo", label: "Book a Demo" },
-                        { id: "museum", label: "Museum Partnership" },
-                        { id: "visitor", label: "Visitor Inquiry" },
-                        { id: "general", label: "General Question" },
-                      ].map((t) => (
+                      {contactTypes.map((t) => (
                         <button
                           key={t.id}
                           onClick={() => setFormType(t.id)}
-                          className={`font-['Manrope'] text-[13px] px-4 py-2 rounded-full border transition-all duration-200 ${
+                          className={`font-['Manrope'] text-[12px] px-3.5 py-1.5 rounded-full border transition-all duration-200 cursor-pointer inline-flex items-center gap-1.5 ${
                             formType === t.id
                               ? "bg-[#341701] text-[#ffe088] border-[#341701]"
                               : "border-[#c9a84c]/20 text-[#76593a] hover:border-[#c9a84c]/40"
                           }`}
                         >
+                          <t.icon size={15} strokeWidth={2} />
                           {t.label}
                         </button>
                       ))}
@@ -96,41 +123,56 @@ export function ContactPage() {
                       </div>
                       <button
                         onClick={() => setSubmitted(true)}
-                        className="w-full font-['Manrope'] text-[14px] bg-[#341701] text-[#ffe088] rounded-xl py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(52,23,1,0.14)] transition-all"
+                        className="w-full font-['Manrope'] text-[14px] bg-[#341701] text-[#ffe088] rounded-xl py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(52,23,1,0.14)] transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                       >
+                        <Send size={16} strokeWidth={2} />
                         {formType === "demo" ? "Request Demo" : "Send Message"}
                       </button>
                     </div>
-                  </>
-                )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </BlockReveal>
 
             {/* Side Info */}
-            <StaggerGroup className="lg:col-span-2 space-y-6" delayChildren={0.08} staggerChildren={0.12}>
+            <StaggerGroup className="lg:col-span-2 flex flex-col gap-6 lg:h-full" delayChildren={0.08} staggerChildren={0.12}>
               <StaggerItem>
-                <div className="bg-[#f5f0e4] rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
+                <div className="bg-[#f5f0e4]/50 rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
                 <h3 className="font-['Manrope'] text-[16px] text-[#341701] mb-5">Get in Touch</h3>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail size={18} className="text-[#c9a84c] mt-0.5 shrink-0" />
-                    <div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/50">
+                      <Mail size={18} className="text-[#c9a84c]" />
+                    </div>
+                    <div className="space-y-0.5">
                       <div className="font-['Manrope'] text-[13px] text-[#76593a]/50">Email</div>
-                      <div className="font-['Manrope'] text-[14px] text-[#341701]">hello@museoverse.com</div>
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=mahmoud21%40itu.edu.tr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-['Manrope'] text-[14px] text-[#341701] hover:text-[#c9a84c] transition-colors"
+                      >
+                        mahmoud21@itu.edu.tr
+                      </a>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Phone size={18} className="text-[#c9a84c] mt-0.5 shrink-0" />
-                    <div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/50">
+                      <Phone size={18} className="text-[#c9a84c]" />
+                    </div>
+                    <div className="space-y-0.5">
                       <div className="font-['Manrope'] text-[13px] text-[#76593a]/50">Phone</div>
-                      <div className="font-['Manrope'] text-[14px] text-[#341701]">+1 (555) 012-3456</div>
+                      <div className="font-['Manrope'] text-[14px] text-[#341701]">+90 552 872 13 69</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin size={18} className="text-[#c9a84c] mt-0.5 shrink-0" />
-                    <div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/50">
+                      <MapPin size={18} className="text-[#c9a84c]" />
+                    </div>
+                    <div className="space-y-0.5">
                       <div className="font-['Manrope'] text-[13px] text-[#76593a]/50">Location</div>
-                      <div className="font-['Manrope'] text-[14px] text-[#341701]">San Francisco, CA</div>
+                      <div className="font-['Manrope'] text-[14px] text-[#341701]">Istanbul, Türkiye</div>
                     </div>
                   </div>
                 </div>
@@ -138,14 +180,14 @@ export function ContactPage() {
               </StaggerItem>
 
               {/* Quick FAQ */}
-              <StaggerItem>
-                <div className="bg-white rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
+              <StaggerItem className="lg:flex-1">
+                <div className="h-full bg-white rounded-2xl p-7 border border-[#c9a84c]/10 hover:-translate-y-1 transition-transform duration-300">
                 <h3 className="font-['Manrope'] text-[16px] text-[#341701] mb-4">Quick Answers</h3>
                 <div className="space-y-0">
                   {FAQS.map((f, i) => (
                     <div key={i} className="border-b border-[#c9a84c]/10 last:border-0">
                       <button
-                        className="w-full flex items-center justify-between py-3.5 text-left"
+                        className="w-full flex items-center justify-between py-3.5 text-left cursor-pointer"
                         onClick={() => setFaqOpen(faqOpen === i ? null : i)}
                       >
                         <span className="font-['Manrope'] text-[13px] text-[#341701] pr-4">{f.q}</span>

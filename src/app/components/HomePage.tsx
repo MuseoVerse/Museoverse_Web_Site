@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ScanSearch, BookOpen, Globe, Users, BarChart3, Sparkles,
-  ChevronDown, Building2, Smartphone, ArrowRight,
+  ChevronDown, Building2, Smartphone, ArrowRight, Presentation,
   Eye, MessageCircle, Map, TrendingUp
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -153,14 +153,16 @@ export function HomePage() {
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-8">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto font-['Manrope'] text-[14px] tracking-[0.3px] px-7 py-3.5 rounded-full bg-[#341701] text-[#ffe088] hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(52,23,1,0.14)] transition-all duration-300 text-center"
+                  className="w-full sm:w-auto font-['Manrope'] text-[14px] tracking-[0.3px] px-7 py-3.5 rounded-full bg-[#341701] text-[#ffe088] hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(52,23,1,0.14)] transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
                 >
+                  <Presentation size={16} strokeWidth={2} />
                   Book a Demo
                 </Link>
                 <Link
                   to="/for-visitors"
-                  className="w-full sm:w-auto font-['Manrope'] text-[14px] tracking-[0.3px] px-7 py-3.5 rounded-full border border-[#c9a84c]/40 text-[#341701] hover:bg-[#341701]/5 hover:-translate-y-0.5 transition-all duration-300 text-center"
+                  className="w-full sm:w-auto font-['Manrope'] text-[14px] tracking-[0.3px] px-7 py-3.5 rounded-full border border-[#c9a84c]/40 text-[#341701] hover:bg-[#341701]/5 hover:-translate-y-0.5 transition-all duration-300 text-center inline-flex items-center justify-center gap-2"
                 >
+                  <Smartphone size={16} strokeWidth={2} />
                   Download App
                 </Link>
               </div>
@@ -456,10 +458,12 @@ export function HomePage() {
             Whether you're a museum looking to modernize or a visitor eager to explore, MuseoVerse is built for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center">
+            <Link to="/contact" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full bg-[#ffe088] text-[#341701] hover:bg-[#f5d56e] hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(255,224,136,0.12)] transition-all text-center inline-flex items-center justify-center gap-2">
+              <Presentation size={16} strokeWidth={2} />
               Book a Demo
             </Link>
-            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center">
+            <Link to="/for-visitors" className="w-full sm:w-auto font-['Manrope'] text-[14px] px-8 py-4 rounded-full border border-[#ffe088]/30 text-[#ffe088] hover:bg-[#ffe088]/10 hover:-translate-y-0.5 transition-all text-center inline-flex items-center justify-center gap-2">
+              <Smartphone size={16} strokeWidth={2} />
               Download the App
             </Link>
           </div>
