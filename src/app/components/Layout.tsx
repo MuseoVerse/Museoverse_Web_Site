@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { BlockReveal, PageTransition, StaggerGroup, StaggerItem } from "./animations";
 import { AppStoreBadgeContent, GooglePlayBadgeContent } from "./storeIcons";
 import museoVerseLogo from "../../assets/ca37ab0589456b573561e21d7ada50143220bbeb.png";
+import museoVerseLightLogo from "../../assets/light_logo.png";
 
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
@@ -170,12 +171,11 @@ function Footer() {
           {/* Brand */}
           <StaggerItem className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-full bg-[#ffe088]/20 flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" stroke="#ffe088" strokeWidth="2" strokeLinejoin="round"/>
-                  <path d="M12 22V12M2 7l10 5 10-5" stroke="#ffe088" strokeWidth="2" strokeLinejoin="round"/>
-                </svg>
-              </div>
+              <img
+                src={museoVerseLightLogo}
+                alt="MuseoVerse logo"
+                className="w-8 h-8 object-contain"
+              />
               <span className="font-['Playfair_Display'] text-[#ffe088] text-[20px]">MuseoVerse</span>
             </div>
             <p className="font-['Manrope'] text-[13px] leading-[22px] text-[#fbf9f4]/50 max-w-[260px]">

@@ -5,6 +5,14 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
+import aiArtifactRecognitionImage from "../../assets/Gemini_Generated_Image_v43qxdv43qxdv43q.png";
+import personalizedStorytellingImage from "../../assets/Gemini_Generated_Image_diflkmdiflkmdifl.png";
+import interactiveArAnnotationsImage from "../../assets/Gemini_Generated_Image_1qqlrc1qqlrc1qql.png";
+import geofencedSocialFeedImage from "../../assets/Gemini_Generated_Image_ib3cjwib3cjwib3c.png";
+import virtualMuseumExperiencesImage from "../../assets/Gemini_Generated_Image_oxxbpxoxxbpxoxxb.png";
+import museumAnalyticsDashboardImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
+import campaignsVisibilityToolsImage from "../../assets/Gemini_Generated_Image_s8geucs8geucs8ge.png";
+import smartRecommendationsImage from "../../assets/Gemini_Generated_Image_f9xaxwf9xaxwf9xa.png";
 
 const FEATURES = [
   {
@@ -13,7 +21,7 @@ const FEATURES = [
     desc: "Point your camera at any artifact and our vision AI instantly identifies it, pulling from a vast cultural knowledge base to deliver accurate context, origin, and historical significance.",
     benefit: "Visitors understand what they're seeing without searching or reading small labels.",
     audience: "visitor",
-    img: "https://images.unsplash.com/photo-1765127959662-a7229fa51580?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNldW0lMjBnYWxsZXJ5JTIwYW5jaWVudCUyMGFydGlmYWN0c3xlbnwxfHx8fDE3NzQ4MDY5ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: aiArtifactRecognitionImage,
   },
   {
     icon: BookOpen,
@@ -21,7 +29,7 @@ const FEATURES = [
     desc: "Each artifact comes alive through AI-narrated stories that adapt to your language, interests, and preferred depth. Choose between a quick overview or a deep scholarly exploration.",
     benefit: "Every visitor gets a unique, engaging narrative — from casual tourists to researchers.",
     audience: "visitor",
-    img: "https://images.unsplash.com/photo-1774176105904-f3ed4b6323a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwZ3JlZWslMjBzY3VscHR1cmUlMjBtYXJibGV8ZW58MXx8fHwxNzc0ODA2OTgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: personalizedStorytellingImage,
   },
   {
     icon: Sparkles,
@@ -29,7 +37,7 @@ const FEATURES = [
     desc: "Through your device's camera, see real-time visual annotations layered on artifacts — highlighting materials, symbolic elements, construction techniques, and restoration history.",
     benefit: "Transforms passive viewing into active, layered discovery.",
     audience: "visitor",
-    img: "https://images.unsplash.com/photo-1769437598069-d5148d009769?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzbWFydHBob25lJTIwbXVzZXVtJTIwdmlzaXRvcnxlbnwxfHx8fDE3NzQ4MDY5ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: interactiveArAnnotationsImage,
   },
   {
     icon: Users,
@@ -37,7 +45,7 @@ const FEATURES = [
     desc: "Share museum discoveries, react to posts from fellow visitors, and build a community around cultural exploration. Content is geofenced to create authentic, location-aware conversations.",
     benefit: "Museums become social spaces where shared experiences amplify engagement.",
     audience: "both",
-    img: "https://images.unsplash.com/photo-1673672397869-580cea12b333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicml0aXNoJTIwbXVzZXVtJTIwaW50ZXJpb3IlMjBjb2x1bW5zfGVufDF8fHx8MTc3NDgwNjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    img: geofencedSocialFeedImage,
   },
   {
     icon: Globe,
@@ -45,7 +53,7 @@ const FEATURES = [
     desc: "Explore partner museums remotely through immersive virtual tours. Walk through galleries, interact with exhibits, and discover collections without physical travel.",
     benefit: "Culture becomes accessible to everyone, everywhere, anytime.",
     audience: "visitor",
-    img: "https://images.unsplash.com/photo-1697599211453-4d9ada19c72b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb3V2cmUlMjBtdXNldW0lMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzc0ODA2OTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: virtualMuseumExperiencesImage,
   },
   {
     icon: Target,
@@ -53,7 +61,7 @@ const FEATURES = [
     desc: "Before, during, and after visits, MuseoVerse suggests exhibits, artifacts, and museums based on personal interests, visit history, and proximity.",
     benefit: "Visitors always know what to see next. Museums benefit from increased discovery.",
     audience: "both",
-    img: "https://images.unsplash.com/photo-1563474369245-bb6cf001f72c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNldW0lMjBoYWxsd2F5JTIwcmVuYWlzc2FuY2UlMjBwYWludGluZ3N8ZW58MXx8fHwxNzc0ODA2OTgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: smartRecommendationsImage,
   },
   {
     icon: BarChart3,
@@ -61,7 +69,7 @@ const FEATURES = [
     desc: "A comprehensive real-time dashboard for museums to monitor visitor engagement, storytelling usage, scan activity, exhibit performance, and social feed metrics.",
     benefit: "Museums make data-driven decisions to improve experiences and allocate resources.",
     audience: "museum",
-    img: "https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXRpY3MlMjBkYXNoYm9hcmQlMjBjb21wdXRlciUyMHNjcmVlbnxlbnwxfHx8fDE3NzQ4MDY5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: museumAnalyticsDashboardImage,
   },
   {
     icon: Megaphone,
@@ -69,7 +77,7 @@ const FEATURES = [
     desc: "Museums can create promotional campaigns, featured exhibit placements, and targeted recommendations to increase visibility and drive foot traffic.",
     benefit: "Institutions grow their audience and promote special exhibitions effectively.",
     audience: "museum",
-    img: "https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwZGl2ZXJzZSUyMHByb2Zlc3Npb25hbCUyMG9mZmljZXxlbnwxfHx8fDE3NzQ4MDY5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: campaignsVisibilityToolsImage,
   },
 ];
 
@@ -77,7 +85,7 @@ export function ProductPage() {
   return (
     <div>
       {/* Hero */}
-      <SectionReveal className="pt-[72px] pb-12 md:pb-20 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+      <SectionReveal className="pt-[72px] pb-8 md:pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Product</span>
           <h1 className="font-['Playfair_Display'] text-[34px] md:text-[52px] text-[#341701] mt-3 mb-5 leading-[1.1]">
@@ -90,7 +98,7 @@ export function ProductPage() {
       </SectionReveal>
 
       {/* Features */}
-      <SectionReveal className="py-16 md:py-24">
+      <SectionReveal className="pt-8 md:pt-12 pb-16 md:pb-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <StaggerGroup className="space-y-20 md:space-y-28" staggerChildren={0.16}>
             {FEATURES.map((f, i) => (

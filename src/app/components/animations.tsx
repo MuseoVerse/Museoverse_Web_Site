@@ -2,7 +2,8 @@ import type { CSSProperties, ReactNode } from "react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 
 const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
-const VIEWPORT = { once: true, amount: 0.18 };
+const SECTION_VIEWPORT = { once: true, amount: 0.04 };
+const BLOCK_VIEWPORT = { once: true, amount: 0.18 };
 
 function createFadeUpVariants(
   reducedMotion: boolean,
@@ -68,7 +69,7 @@ export function SectionReveal({
       variants={createFadeUpVariants(reducedMotion, 36, delay)}
       initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={SECTION_VIEWPORT}
     >
       {children}
     </motion.section>
@@ -94,7 +95,7 @@ export function BlockReveal({
       variants={createFadeUpVariants(reducedMotion, y, delay)}
       initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={BLOCK_VIEWPORT}
     >
       {children}
     </motion.div>
@@ -135,7 +136,7 @@ export function StaggerGroup({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT}
+      viewport={SECTION_VIEWPORT}
     >
       {children}
     </motion.div>
