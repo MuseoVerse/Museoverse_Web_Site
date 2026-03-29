@@ -10,10 +10,22 @@ const FAQS = [
   { q: "Do you support multiple languages?", a: "Yes. MuseoVerse's AI storytelling supports 30+ languages with natural-sounding narration." },
 ];
 
+const INITIAL_FORM_DATA = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  organization: "",
+  message: "",
+};
+
+type FormField = keyof typeof INITIAL_FORM_DATA;
+
 export function ContactPage() {
   const [formType, setFormType] = useState("demo");
   const [submitted, setSubmitted] = useState(false);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  const [errors, setErrors] = useState<Partial<Record<FormField, string>>>({});
   const contactTypes = [
     { id: "demo", label: "Book a Demo", icon: Presentation },
     { id: "museum", label: "Museum Partnership", icon: Building2 },
@@ -30,6 +42,68 @@ export function ContactPage() {
 
     return () => window.clearTimeout(resetTimer);
   }, [submitted]);
+
+  useEffect(() => {
+    if (formType === "demo" || formType === "museum") return;
+    setErrors((current) => {
+      if (!current.organization) return current;
+      const { organization, ...rest } = current;
+      return rest;
+    });
+  }, [formType]);
+
+  function getFieldError(field: FormField, value: string) {
+    const trimmedValue = value.trim();
+
+    if (field === "lastName") return "";
+    if (field === "organization" && !(formType === "demo" || formType === "museum")) return "";
+    if (!trimmedValue) return "This field is required.";
+    if (field === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedValue)) {
+      return "Please enter a valid email address.";
+    }
+
+    return "";
+  }
+
+  function validateForm() {
+    const nextErrors: Partial<Record<FormField, string>> = {};
+
+    (Object.keys(INITIAL_FORM_DATA) as FormField[]).forEach((field) => {
+      const error = getFieldError(field, formData[field]);
+      if (error) nextErrors[field] = error;
+    });
+
+    return nextErrors;
+  }
+
+  function handleFieldChange(field: FormField, value: string) {
+    setFormData((current) => ({ ...current, [field]: value }));
+    setErrors((current) => {
+      if (!current[field]) return current;
+      const nextError = getFieldError(field, value);
+      return { ...current, [field]: nextError || undefined };
+    });
+  }
+
+  function handleSubmit() {
+    const nextErrors = validateForm();
+    if (Object.values(nextErrors).some(Boolean)) {
+      setErrors(nextErrors);
+      return;
+    }
+
+    setErrors({});
+    setSubmitted(true);
+    setFormData(INITIAL_FORM_DATA);
+  }
+
+  function getInputClassName(field: FormField) {
+    return `w-full font-['Manrope'] text-[14px] border rounded-xl px-4 py-3 focus:outline-none transition-colors ${
+      errors[field]
+        ? "bg-[#fff5f5] border-[#d35757]/45 text-[#7a1d1d] placeholder:text-[#c88f8f] focus:border-[#d35757]"
+        : "bg-[#f5f0e4]/50 border-[#c9a84c]/15 text-[#341701] focus:border-[#c9a84c]/40"
+    }`;
+  }
 
   return (
     <div>
@@ -99,30 +173,69 @@ export function ContactPage() {
                     <div className="space-y-5">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">First Name</label>
-                          <input className="w-full font-['Manrope'] text-[14px] bg-[#f5f0e4]/50 border border-[#c9a84c]/15 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9a84c]/40 transition-colors" placeholder="Your first name" />
+                          <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">
+                            First Name <span className="text-[#d35757]">*</span>
+                          </label>
+                          <input
+                            value={formData.firstName}
+                            onChange={(event) => handleFieldChange("firstName", event.target.value)}
+                            className={getInputClassName("firstName")}
+                            placeholder="Your first name"
+                          />
+                          {errors.firstName && <p className="mt-2 font-['Manrope'] text-[12px] text-[#d35757]">{errors.firstName}</p>}
                         </div>
                         <div>
                           <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">Last Name</label>
-                          <input className="w-full font-['Manrope'] text-[14px] bg-[#f5f0e4]/50 border border-[#c9a84c]/15 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9a84c]/40 transition-colors" placeholder="Your last name" />
+                          <input
+                            value={formData.lastName}
+                            onChange={(event) => handleFieldChange("lastName", event.target.value)}
+                            className={getInputClassName("lastName")}
+                            placeholder="Your last name"
+                          />
                         </div>
                       </div>
                       <div>
-                        <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">Email</label>
-                        <input type="email" className="w-full font-['Manrope'] text-[14px] bg-[#f5f0e4]/50 border border-[#c9a84c]/15 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9a84c]/40 transition-colors" placeholder="your@email.com" />
+                        <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">
+                          Email <span className="text-[#d35757]">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(event) => handleFieldChange("email", event.target.value)}
+                          className={getInputClassName("email")}
+                          placeholder="your@email.com"
+                        />
+                        {errors.email && <p className="mt-2 font-['Manrope'] text-[12px] text-[#d35757]">{errors.email}</p>}
                       </div>
                       {(formType === "demo" || formType === "museum") && (
                         <div>
-                          <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">Organization</label>
-                          <input className="w-full font-['Manrope'] text-[14px] bg-[#f5f0e4]/50 border border-[#c9a84c]/15 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9a84c]/40 transition-colors" placeholder="Museum or institution name" />
+                          <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">
+                            Organization <span className="text-[#d35757]">*</span>
+                          </label>
+                          <input
+                            value={formData.organization}
+                            onChange={(event) => handleFieldChange("organization", event.target.value)}
+                            className={getInputClassName("organization")}
+                            placeholder="Museum or institution name"
+                          />
+                          {errors.organization && <p className="mt-2 font-['Manrope'] text-[12px] text-[#d35757]">{errors.organization}</p>}
                         </div>
                       )}
                       <div>
-                        <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">Message</label>
-                        <textarea rows={4} className="w-full font-['Manrope'] text-[14px] bg-[#f5f0e4]/50 border border-[#c9a84c]/15 rounded-xl px-4 py-3 focus:outline-none focus:border-[#c9a84c]/40 transition-colors resize-none" placeholder="Tell us about your interest in MuseoVerse..." />
+                        <label className="font-['Manrope'] text-[13px] text-[#76593a] mb-1.5 block">
+                          Message <span className="text-[#d35757]">*</span>
+                        </label>
+                        <textarea
+                          rows={4}
+                          value={formData.message}
+                          onChange={(event) => handleFieldChange("message", event.target.value)}
+                          className={`${getInputClassName("message")} resize-none`}
+                          placeholder="Tell us about your interest in MuseoVerse..."
+                        />
+                        {errors.message && <p className="mt-2 font-['Manrope'] text-[12px] text-[#d35757]">{errors.message}</p>}
                       </div>
                       <button
-                        onClick={() => setSubmitted(true)}
+                        onClick={handleSubmit}
                         className="w-full font-['Manrope'] text-[14px] bg-[#341701] text-[#ffe088] rounded-xl py-3.5 hover:bg-[#4a2508] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(52,23,1,0.14)] transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                       >
                         <Send size={16} strokeWidth={2} />
