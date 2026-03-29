@@ -362,7 +362,7 @@ function OverlayShadowOverlayBlur() {
       <div className="absolute inset-[-4.44%_-9.92%_-13.33%_-9.92%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.1667 26.5">
           <foreignObject height="30.5" width="28.1667" x="-2" y="-3">
-            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} xmlns="http://www.w3.org/1999/xhtml" />
+            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} />
           </foreignObject>
           <g data-figma-bg-blur-radius="4" filter="url(#filter0_d_1_2412)" id="Overlay+Shadow+OverlayBlur">
             <rect fill="var(--fill-0, white)" fillOpacity="0.9" height="22.5" rx="10.0833" shapeRendering="crispEdges" width="20.1667" x="2" y="1" />
@@ -447,7 +447,7 @@ function OverlayShadowOverlayBlur1() {
       <div className="absolute inset-[-4.44%_-9.92%_-13.33%_-9.92%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.1667 26.5">
           <foreignObject height="30.5" width="28.1667" x="-2" y="-3">
-            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} xmlns="http://www.w3.org/1999/xhtml" />
+            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} />
           </foreignObject>
           <g data-figma-bg-blur-radius="4" filter="url(#filter0_d_1_2412)" id="Overlay+Shadow+OverlayBlur">
             <rect fill="var(--fill-0, white)" fillOpacity="0.9" height="22.5" rx="10.0833" shapeRendering="crispEdges" width="20.1667" x="2" y="1" />
@@ -532,7 +532,7 @@ function OverlayShadowOverlayBlur2() {
       <div className="absolute inset-[-4.44%_-9.92%_-13.33%_-9.92%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.1667 26.5">
           <foreignObject height="30.5" width="28.1667" x="-2" y="-3">
-            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} xmlns="http://www.w3.org/1999/xhtml" />
+            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} />
           </foreignObject>
           <g data-figma-bg-blur-radius="4" filter="url(#filter0_d_1_2412)" id="Overlay+Shadow+OverlayBlur">
             <rect fill="var(--fill-0, white)" fillOpacity="0.9" height="22.5" rx="10.0833" shapeRendering="crispEdges" width="20.1667" x="2" y="1" />
@@ -617,7 +617,7 @@ function OverlayShadowOverlayBlur3() {
       <div className="absolute inset-[-4.44%_-9.92%_-13.33%_-9.92%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.1667 26.5">
           <foreignObject height="30.5" width="28.1667" x="-2" y="-3">
-            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} xmlns="http://www.w3.org/1999/xhtml" />
+            <div style={{ backdropFilter: "blur(2px)", clipPath: "url(#bgblur_0_1_2412_clip_path)", height: "100%", width: "100%" }} />
           </foreignObject>
           <g data-figma-bg-blur-radius="4" filter="url(#filter0_d_1_2412)" id="Overlay+Shadow+OverlayBlur">
             <rect fill="var(--fill-0, white)" fillOpacity="0.9" height="22.5" rx="10.0833" shapeRendering="crispEdges" width="20.1667" x="2" y="1" />
