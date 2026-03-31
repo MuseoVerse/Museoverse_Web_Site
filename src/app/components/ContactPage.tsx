@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Mail, MapPin, Phone, Send, ChevronDown, Presentation, Building2, Users, CircleHelp } from "lucide-react";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
+import { BackgroundParticles } from "./BackgroundParticles";
 
 const FAQS = [
   { q: "How long does museum onboarding take?", a: "Typically 4-6 weeks depending on collection size. Our team handles most of the setup." },
@@ -108,8 +109,9 @@ export function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <SectionReveal className="pt-[72px] pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
+      <SectionReveal className="relative overflow-hidden pt-[72px] pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+        <BackgroundParticles className="opacity-[0.16]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Contact</span>
           <h1 className="font-['Playfair_Display'] text-[34px] md:text-[48px] text-[#341701] mt-3 mb-4 leading-[1.1]">
             Let's Start a Conversation
@@ -121,8 +123,9 @@ export function ContactPage() {
       </SectionReveal>
 
       {/* Form + Info */}
-      <SectionReveal className="py-16 md:py-24">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-24">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <BlockReveal className="lg:col-span-3">

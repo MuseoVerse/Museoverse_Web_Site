@@ -4,6 +4,7 @@ import {
   Target, Megaphone, ArrowRight, Presentation, Download
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BackgroundParticles } from "./BackgroundParticles";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 import aiArtifactRecognitionImage from "../../assets/Gemini_Generated_Image_v43qxdv43qxdv43q.png";
 import personalizedStorytellingImage from "../../assets/Gemini_Generated_Image_diflkmdiflkmdifl.png";
@@ -86,8 +87,9 @@ export function ProductPage() {
   return (
     <div>
       {/* Hero */}
-      <SectionReveal className="pt-[72px] pb-8 md:pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
+      <SectionReveal className="relative overflow-hidden pt-[72px] pb-8 md:pb-12 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+        <BackgroundParticles className="opacity-[0.16]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Product</span>
           <h1 className="font-['Playfair_Display'] text-[34px] md:text-[52px] text-[#341701] mt-3 mb-5 leading-[1.1]">
             The Complete MuseoVerse<br/>Ecosystem
@@ -99,8 +101,9 @@ export function ProductPage() {
       </SectionReveal>
 
       {/* Features */}
-      <SectionReveal className="pt-8 md:pt-12 pb-16 md:pb-24">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden pt-8 md:pt-12 pb-16 md:pb-24">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <StaggerGroup className="space-y-20 md:space-y-28" staggerChildren={0.16}>
             {FEATURES.map((f, i) => (
               <StaggerItem key={f.title}>

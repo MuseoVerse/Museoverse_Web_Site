@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Heart, Lightbulb, Globe, Shield, Mail } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BackgroundParticles } from "./BackgroundParticles";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 import challengeImage from "../../assets/Gemini_Generated_Image_z4i4ulz4i4ulz4i4.png";
 import teamImage from "../../assets/Team.png";
@@ -11,8 +12,9 @@ export function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <SectionReveal className="pt-[72px] pb-12 md:pb-16 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24">
+      <SectionReveal className="relative overflow-hidden pt-[72px] pb-12 md:pb-16 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+        <BackgroundParticles className="opacity-[0.16]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24">
           <div className="max-w-[680px] mx-auto text-center">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">About MuseoVerse</span>
             <h1 className="font-['Playfair_Display'] text-[34px] md:text-[50px] text-[#341701] mt-3 mb-6 leading-[1.1]">
@@ -27,8 +29,9 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* The Problem */}
-      <SectionReveal className="py-16 md:py-20">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] hover:-translate-y-1 transition-transform duration-300">
               <ImageWithFallback
@@ -86,8 +89,9 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Values */}
-      <SectionReveal className="py-16 md:py-20">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
           <BlockReveal>
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Our Values</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[36px] text-[#341701] mt-3 mb-14">What Drives Us</h2>
@@ -114,8 +118,9 @@ export function AboutPage() {
       </SectionReveal>
 
       {/* Team */}
-      <SectionReveal className="py-16 md:py-20 bg-[#f5f0e4]/50">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#f5f0e4]/50">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal>
               <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Our Story</span>

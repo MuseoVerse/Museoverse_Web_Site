@@ -7,6 +7,7 @@ import {
   Eye, MessageCircle, Map, TrendingUp
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BackgroundParticles } from "./BackgroundParticles";
 import {
   BlockReveal,
   FloatingElement,
@@ -96,7 +97,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-[#c9a84c]/15">
       <button
-        className="w-full flex items-center justify-between py-5 text-left group"
+        className="w-full flex items-center justify-between py-5 text-left group cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         <span className="font-['Manrope'] text-[15px] md:text-[16px] text-[#341701] pr-4">{q}</span>
@@ -131,12 +132,13 @@ export function HomePage() {
       {/* HERO */}
       <section className="relative pt-[72px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#fbf9f4] via-[#f5f0e4] to-[#fbf9f4]" />
+        <BackgroundParticles className="opacity-[0.22]" />
         <motion.div
           className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#ffe088]/8 blur-[120px]"
           animate={{ opacity: [0.5, 0.9, 0.5], scale: [1, 1.08, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-8 md:pb-16">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-8 md:pb-16">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Text */}
             <BlockReveal className="flex-1 text-center lg:text-left max-w-[560px]" y={20}>
@@ -215,8 +217,9 @@ export function HomePage() {
       </section>
 
       {/* WHAT IS MUSEOVERSE */}
-      <SectionReveal className="py-20 md:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-20 md:py-28">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">The Platform</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[40px] text-[#341701] mt-3 mb-4">One Ecosystem, Two Worlds</h2>
@@ -271,8 +274,9 @@ export function HomePage() {
       </SectionReveal>
 
       {/* BUILT FOR BOTH SIDES */}
-      <SectionReveal className="py-20 md:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-20 md:py-28">
+        <BackgroundParticles className="opacity-[0.14]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Built for Both Sides</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[40px] text-[#341701] mt-3">Two Audiences, One Platform</h2>
@@ -336,8 +340,9 @@ export function HomePage() {
       </SectionReveal>
 
       {/* ECOSYSTEM PREVIEW */}
-      <SectionReveal className="pt-20 md:pt-28 pb-10 md:pb-14 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden pt-20 md:pt-28 pb-10 md:pb-14 bg-gradient-to-b from-[#f5f0e4] to-[#fbf9f4]">
+        <BackgroundParticles className="opacity-[0.14]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
             <BlockReveal>
               <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">The Connected Ecosystem</span>
@@ -389,8 +394,9 @@ export function HomePage() {
       </SectionReveal>
 
       {/* TRUST */}
-      <SectionReveal className="pt-10 md:pt-14 pb-12 md:pb-16 bg-gradient-to-b from-[#fbf9f4] to-[#f5f0e4]/65 overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden pt-10 md:pt-14 pb-12 md:pb-16 bg-gradient-to-b from-[#fbf9f4] to-[#f5f0e4]/65">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="relative rounded-[36px] border border-[#c9a84c]/15 bg-white/70 px-6 py-10 md:px-10 md:py-14 shadow-[0_20px_60px_rgba(52,23,1,0.06)] backdrop-blur-sm overflow-hidden">
             <div className="absolute -top-20 right-0 h-[240px] w-[240px] rounded-full bg-[#ffe088]/12 blur-[90px]" />
             <div className="absolute -bottom-24 left-0 h-[240px] w-[240px] rounded-full bg-[#341701]/[0.04] blur-[110px]" />
@@ -440,8 +446,9 @@ export function HomePage() {
       </SectionReveal>
 
       {/* FAQ */}
-      <SectionReveal className="pt-12 md:pt-16 pb-20 md:pb-28 bg-[#f5f0e4]/50">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden pt-12 md:pt-16 pb-20 md:pb-28 bg-[#f5f0e4]/50">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[720px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-12">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">FAQ</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[36px] text-[#341701] mt-3">Common Questions</h2>

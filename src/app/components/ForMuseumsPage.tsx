@@ -4,6 +4,7 @@ import {
   Shield, HeartHandshake, ArrowRight, CheckCircle2, Presentation, Building2, Mail
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BackgroundParticles } from "./BackgroundParticles";
 import { BlockReveal, SectionReveal, StaggerGroup, StaggerItem } from "./animations";
 import museumIntelligenceCenterImage from "../../assets/Gemini_Generated_Image_5xeie25xeie25xei.png";
 import museumsCtaBackgroundImage from "../../assets/58e80897e985ec5465e26819389f874a356ff0a3.png";
@@ -54,8 +55,9 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Why Museums Choose */}
-      <SectionReveal className="py-16 md:py-20">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Why MuseoVerse</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[40px] text-[#341701] mt-3 mb-4">Why Museums Choose MuseoVerse</h2>
@@ -80,8 +82,9 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Dashboard Preview */}
-      <SectionReveal className="py-16 md:py-20 bg-[#f5f0e4]/50">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#f5f0e4]/50">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal>
               <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">The Dashboard</span>
@@ -119,8 +122,9 @@ export function ForMuseumsPage() {
       </SectionReveal>
 
       {/* Partner Process */}
-      <SectionReveal className="py-16 md:py-20">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20">
+        <BackgroundParticles className="opacity-[0.1]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 text-center">
           <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">Getting Started</span>
           <h2 className="font-['Playfair_Display'] text-[28px] md:text-[36px] text-[#341701] mt-3 mb-14">How Partnership Works</h2>
           <StaggerGroup className="grid grid-cols-1 md:grid-cols-3 gap-8">

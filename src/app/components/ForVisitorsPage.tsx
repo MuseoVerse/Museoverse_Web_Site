@@ -4,6 +4,7 @@ import {
   Bookmark, Accessibility, ArrowRight
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { BackgroundParticles } from "./BackgroundParticles";
 import {
   BlockReveal,
   FloatingElement,
@@ -30,10 +31,11 @@ export function ForVisitorsPage() {
       {/* Hero */}
       <SectionReveal className="pt-[72px] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#f5f0e4] via-[#fbf9f4] to-[#f5f0e4]" />
+        <BackgroundParticles className="opacity-[0.18]" />
         <FloatingElement className="absolute top-20 right-0" distance={16} duration={9}>
           <div className="w-[400px] h-[400px] rounded-full bg-[#ffe088]/10 blur-[100px]" />
         </FloatingElement>
-        <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-12 md:pb-16">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 md:pt-24 pb-12 md:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal>
               <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">For Visitors</span>
@@ -95,8 +97,9 @@ export function ForVisitorsPage() {
       </SectionReveal>
 
       {/* Features Grid */}
-      <SectionReveal className="py-16 md:py-20">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <BlockReveal className="text-center mb-16">
             <span className="font-['Manrope'] text-[11px] tracking-[2.5px] uppercase text-[#c9a84c]">App Features</span>
             <h2 className="font-['Playfair_Display'] text-[28px] md:text-[40px] text-[#341701] mt-3 mb-4">Your Museum Companion</h2>
@@ -119,8 +122,9 @@ export function ForVisitorsPage() {
       </SectionReveal>
 
       {/* Experience Section */}
-      <SectionReveal className="py-16 md:py-20 bg-[#f5f0e4]/50">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <SectionReveal className="relative overflow-hidden py-16 md:py-20 bg-[#f5f0e4]/50">
+        <BackgroundParticles className="opacity-[0.12]" />
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <BlockReveal className="rounded-2xl overflow-hidden shadow-[0_16px_48px_rgba(52,23,1,0.1)] hover:-translate-y-1 transition-transform duration-300">
               <ImageWithFallback
